@@ -14,15 +14,7 @@
 <body>
     <div id="auth">
         
-<<<<<<< HEAD
-    <?php 
-	if(isset($_GET['pesan'])){
-		if($_GET['pesan']=="gagal"){
-			echo "<div class='alert'>Username dan Password tidak sesuai !</div>";
-		}
-	}
-	?>
-=======
+
     <?php
     if (isset($_GET['pesan'])) {
         if ($_GET['pesan'] == "gagal") {
@@ -36,20 +28,24 @@
         }
     }
     ?>
->>>>>>> 046fbdbba5c7f1e4f0f22c7b3b26b7da01f19300
+
 
 <div class="row h-100">
     <div class="col-lg-5 col-12">
         <div id="auth-left">
-            
-            <h1 class="auth-title">Rumah Sakit-sakitan</h1>
-            <p class="auth-subtitle mb-5">Silahkan input NIK sesuai dengan KTP</p>
+        <div class="auth-logo">
+        <h1 class="auth-title"><font size="7">Rumah Sakit-sakitan</font></h1>
+            </div>
+            <h1 class="auth-title"><font size="6">Pasien</font></h1>
+            <p class="auth-subtitle mb-5"><font size="5">Silahkan input NIK sesuai dengan KTP</font></p>
 
             
                <form method="post" action="cek_login.php">
                 <div class="form-group position-relative has-icon-left mb-4">
                     <input type="text" class="form-control form-control-xl" placeholder="NIK" name="nik">
-                    
+                    <div class="form-control-icon">
+                        <i class="bi bi-person"></i>
+                    </div>
                 </div>
                
                 
@@ -58,8 +54,8 @@
             
             
             <div class="mt-4 text-lg fs-4">
-                <p class="text-gray-600">Apakah anda dokter? <a href="form_login_dokter.php" class="font-bold">Ya</a></p>
-                
+                <font size="4"><p class="text-gray-600">Apakah anda dokter? <a href="form_login_dokter.php" class="font-bold">Ya</a></p>
+                </font>
             </div> 
             
             
