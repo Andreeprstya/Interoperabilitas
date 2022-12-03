@@ -14,8 +14,16 @@
 <link rel="stylesheet" href="assets/css/shared/iconly.css">
 
 </head>
-
 <body>
+<?php 
+	session_start();
+ 
+	// cek apakah yang mengakses halaman ini sudah login
+	if($_SESSION['nik']==""){
+		header("location:index.php?pesan=gagal");
+	}
+ 
+	?>
     <div id="app">
         <div id="sidebar" class="active">
             <div class="sidebar-wrapper active">
@@ -98,28 +106,149 @@
             </div>
             <?php
                 include 'koneksi.php';
-                $nik = @$_GET['nik'];
-                $query = "SELECT * FROM tb_ktp";
+                $nik = $_SESSION['nik'];
+                $query = "SELECT * FROM tb_ktp where nik = $nik";
                 $data = mysqli_query($koneksi, $query);
                 while ($d = mysqli_fetch_array($data)) {
             ?>
-            <div class="card-body">
+            <form method="post" action="cek_login.php">
+            <table class="table table-striped">
                 <tr>
-                    <div>NIK    : <?php echo $d['nik']; ?></div>
-                    <div>Nama   : <?php echo $d['nama']; ?></div>
-                    <div>Tempat Lahir <?php echo $d['tempat_lahir']; ?></div>
-                    <div>Tanggal Lahir <?php echo $d['tgl_lahir']; ?></div>
-                    <div>Jenis Kelamin</div>
-                    <div>Alamat</div>
-                    <div>Kelurahan</div>
-                    <div>Kecamatan</div>
-                    <div>Agama</div>
-                    <div>Status Kawin</div>
-                    <div>Pekerjaan</div>
-                    <div>Kewarganegaraan</div>
-                    <div>Berlaku</div>
-                    <div>Tanggal Dibuat</div>
+                    <td width = "15%">NIK</td>
+                    <td width = "2%">:</td>
+                    <td width = "30%"><?php echo $d['nik']; ?></td>
+                    <td width = "2%"></td>
+                    <td width = "15%">NIK</td>
+                    <td width = "2%">:</td>
+                    <td width = "30%"><input value="<?php echo $d['nik']; ?>"></td>
                 </tr>
+                <tr>
+                    <td width = "15%">Nama</td>
+                    <td width = "2%">:</td>
+                    <td width = "30%"><?php echo $d['nama']; ?></td>
+                    <td width = "2%"></td>
+                    <td width = "15%">Nama</td>
+                    <td width = "2%">:</td>
+                    <td width = "30%"><input value="<?php echo $d['nama']; ?>"></td>
+                </tr>
+                <tr>
+                    <td width = "15%">Tempat Lahir</td>
+                    <td width = "2%">:</td>
+                    <td width = "30%"><?php echo $d['tempat_lahir']; ?></td>
+                    <td width = "2%"></td>
+                    <td width = "15%">Tempat Lahir</td>
+                    <td width = "2%">:</td>
+                    <td width = "30%"><input value="<?php echo $d['tempat_lahir']; ?>"></td>
+                </tr>
+                <tr>
+                    <td width = "15%">Tanggal Lahir</td>
+                    <td width = "2%">:</td>
+                    <td width = "30%"><?php echo $d['tgl_lahir']; ?></td>
+                    <td width = "2%"></td>
+                    <td width = "15%">Tanggal Lahir</td>
+                    <td width = "2%">:</td>
+                    <td width = "30%"><input value="<?php echo $d['tgl_lahir']; ?>"></td>
+                </tr>
+                <tr>
+                    <td width = "15%">Jenis Kelamin</td>
+                    <td width = "2%">:</td>
+                    <td width = "30%"><?php echo $d['jenis_kelamin']; ?></td>
+                    <td width = "2%"></td>
+                    <td width = "15%">Jenis Kelamin</td>
+                    <td width = "2%">:</td>
+                    <td width = "30%"><input value="<?php echo $d['jenis_kelamin']; ?>"></td>
+                </tr>
+                <tr>
+                    <td width = "15%">Golongan Darah</td>
+                    <td width = "2%">:</td>
+                    <td width = "30%"><?php echo $d['gol_darah']; ?></td>
+                    <td width = "2%"></td>
+                    <td width = "15%">Golongan Darah</td>
+                    <td width = "2%">:</td>
+                    <td width = "30%"><input value="<?php echo $d['gol_darah']; ?>"></td>
+                </tr>
+                <tr>
+                    <td width = "15%">Alamat</td>
+                    <td width = "2%">:</td>
+                    <td width = "30%"><?php echo $d['alamat']; ?></td>
+                    <td width = "2%"></td>
+                    <td width = "15%">Alamat</td>
+                    <td width = "2%">:</td>
+                    <td width = "30%"><input value="<?php echo $d['alamat']; ?>"></td>
+                </tr>
+                <tr>
+                    <td width = "15%">Kelurahan</td>
+                    <td width = "2%">:</td>
+                    <td width = "30%"><?php echo $d['kelurahan']; ?></td>
+                    <td width = "2%"></td>
+                    <td width = "15%">Kelurahan</td>
+                    <td width = "2%">:</td>
+                    <td width = "30%"><input value="<?php echo $d['kelurahan']; ?>"></td>
+                </tr>
+                <tr>
+                    <td width = "15%">Kecamatan</td>
+                    <td width = "2%">:</td>
+                    <td width = "30%"><?php echo $d['kecamatan']; ?></td>
+                    <td width = "2%"></td>
+                    <td width = "15%">Kecamatan</td>
+                    <td width = "2%">:</td>
+                    <td width = "30%"><input value="<?php echo $d['kecamatan']; ?>"></td>
+                </tr>
+                <tr>
+                    <td width = "15%">Agama</td>
+                    <td width = "2%">:</td>
+                    <td width = "30%"><?php echo $d['agama']; ?></td>
+                    <td width = "2%"></td>
+                    <td width = "15%">Agama</td>
+                    <td width = "2%">:</td>
+                    <td width = "30%"><input value="<?php echo $d['agama']; ?>"></td>
+                </tr>
+                <tr>
+                    <td width = "15%">Status Kawin</td>
+                    <td width = "2%">:</td>
+                    <td width = "30%"><?php echo $d['status_kawin']; ?></td>
+                    <td width = "2%"></td>
+                    <td width = "15%">Status Kawin</td>
+                    <td width = "2%">:</td>
+                    <td width = "30%"><input value="<?php echo $d['status_kawin']; ?>"></td>
+                </tr>
+                <tr>
+                    <td width = "15%">Pekerjaan</td>
+                    <td width = "2%">:</td>
+                    <td width = "30%"><?php echo $d['pekerjaan']; ?></td>
+                    <td width = "2%"></td>
+                    <td width = "15%">Pekerjaan</td>
+                    <td width = "2%">:</td>
+                    <td width = "30%"><input value="<?php echo $d['pekerjaan']; ?>"></td>
+                </tr>
+                <tr>
+                    <td width = "15%">Kewarganegaraan</td>
+                    <td width = "2%">:</td>
+                    <td width = "30%"><?php echo $d['kewarganegaraan']; ?></td>
+                    <td width = "2%"></td>
+                    <td width = "15%">Kewarganegaraan</td>
+                    <td width = "2%">:</td>
+                    <td width = "30%"><input value="<?php echo $d['kewarganegaraan']; ?>"></td>
+                </tr>
+                <tr>
+                    <td width = "15%">Berlaku</td>
+                    <td width = "2%">:</td>
+                    <td width = "30%"><?php echo $d['berlaku']; ?></td>
+                    <td width = "2%"></td>
+                    <td width = "15%">Berlaku</td>
+                    <td width = "2%">:</td>
+                    <td width = "30%"><?php echo $d['berlaku']; ?></td>
+                </tr>
+                <tr>
+                    <td width = "15%">Tanggal Dibuat</td>
+                    <td width = "2%">:</td>
+                    <td width = "30%"><?php echo $d['tgl_buat']; ?></td>
+                    <td width = "2%"></td>
+                    <td width = "15%">Tanggal Dibuat</td>
+                    <td width = "2%">:</td>
+                    <td width = "30%"><?php echo $d['tgl_buat']; ?></td>
+                </tr>
+                </form>
             </div>
         </div>
     </section>

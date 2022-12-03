@@ -14,19 +14,13 @@
 <body>
     <div id="auth">
         
-    <?php
-    if (isset($_GET['pesan'])) {
-        if ($_GET['pesan'] == "gagal") {
-            echo "NIK Salah";
-        } elseif ($_GET['pesan'] == "login") {
-            echo "Anda telah berhasil login";
-            header("location:pasien_index.php");
-            exit();
-        } elseif ($_GET['pesan'] == "belum login") {
-            echo "Anda harus login untuk mengakses halaman admin";
-        }
-    }
-    ?>
+    <?php 
+	if(isset($_GET['pesan'])){
+		if($_GET['pesan']=="gagal"){
+			echo "<div class='alert'>Username dan Password tidak sesuai !</div>";
+		}
+	}
+	?>
 
 <div class="row h-200">
     <div class="col-lg-5 col-12">
