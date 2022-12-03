@@ -41,13 +41,7 @@
         <ul class="menu">
             <li class="sidebar-title">Menu</li>
             
-            <li
-                class="sidebar-item  ">
-                <a href="pasien_index.php" class='sidebar-link'>
-                    
-                    <span>Dashboard</span>
-                </a>
-            </li>
+            
             <li
                 
                 class="sidebar-item  ">
@@ -74,7 +68,7 @@
                 class="sidebar-item  ">
                 <a href="form_login.php" class='sidebar-link'>
                     
-                    <span>Logout</span>
+                    <span>Kembali</span>
                 </a>
             </li>
             
