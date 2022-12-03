@@ -49,18 +49,18 @@
                <form method="post" action="cek_login.php">
                 <div class="form-group position-relative has-icon-left mb-4">
                     <input type="text" class="form-control form-control-xl" placeholder="NIK" name="nik">
-                    <div class="form-control-icon">
-                        <i class="bi bi-person"></i>
-                    </div>
+                    
                 </div>
                
                 
                 <button class="btn btn-primary btn-block btn-lg shadow-lg ">CEK</button>
             </form>
             
+            
+            <div class="mt-4 text-lg fs-4">
+                <p class="text-gray-600">Apakah anda dokter? <a href="form_login_dokter.php" class="font-bold">Ya</a></p>
                 
-              
-                
+            </div> 
             
             
         </div>
