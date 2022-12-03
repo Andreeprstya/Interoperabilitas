@@ -39,32 +39,39 @@
     </div>
     <div class="sidebar-menu">
         <ul class="menu">
-            <li class="sidebar-item active">Menu</li>
+             <li class="sidebar-title">Menu</li>
+            <li
+                class="sidebar-item active">
+                <a href="dokter_index.php" class='sidebar-link'>
+                    
+                    <span>Dashboard</span>
+                </a>
+            </li>
             
             <li
                 class="sidebar-item">
-                <a href="data_diri_pasien.php" class='sidebar-link'>
+                <a href="#" class='sidebar-link'>
                     
-                    <span>Data Diri</span>
+                    <span>Periksa Kesehatan</span>
                 </a>
             </li>
              <li
                 class="sidebar-item  ">
-                <a href="cetak_antrean.php" class='sidebar-link'>
+                <a href="#" class='sidebar-link'>
                     
-                    <span>Cetak No Antrean</span>
+                    <span>Daftar Antrean</span>
                 </a>
             </li>
              <li
                 class="sidebar-item  ">
-                <a href="surat_sehat.php" class='sidebar-link'>
+                <a href="#" class='sidebar-link'>
                     
-                    <span>Surat Keterangan Sehat</span>
+                    <span>Cetak Surat Sehat</span>
                 </a>
             </li>
            <li
                 class="sidebar-item  ">
-                <a href="logout.php" class='sidebar-link'>
+                <a href="logout_dokter.php" class='sidebar-link'>
                     
                     <span>Logout</span>
                 </a>

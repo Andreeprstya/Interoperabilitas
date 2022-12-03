@@ -66,7 +66,7 @@
             </li>
              <li
                 class="sidebar-item  ">
-                <a href="form_login.php" class='sidebar-link'>
+                <a href="logout.php" class='sidebar-link'>
                     
                     <span>Kembali</span>
                 </a>

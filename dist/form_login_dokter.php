@@ -18,10 +18,10 @@
     <?php
     if (isset($_GET['pesan'])) {
         if ($_GET['pesan'] == "gagal") {
-            echo "NIK Salah";
+            echo "Username atau Password salah";
         } elseif ($_GET['pesan'] == "login") {
             echo "Anda telah berhasil login";
-            header("location:data_diri_pasien.php");
+            header("location:dokter_index.php");
             exit();
         } elseif ($_GET['pesan'] == "belum login") {
             echo "Anda harus login untuk mengakses halaman admin";
@@ -40,7 +40,7 @@
             <p class="auth-subtitle mb-5"><font size="5">Silahkan input Username dan Paswword</font></p>
 
             
-               <form method="post" action="cek_login.php">
+               <form method="post" action="cek_login_dokter.php">
                 <div class="form-group position-relative has-icon-left mb-4">
                     <input type="text" class="form-control form-control-xl" placeholder="Username" name="username">
                     <div class="form-control-icon">
@@ -55,7 +55,7 @@
                 </div>
                
                 
-                <button class="btn btn-primary btn-block btn-lg shadow-lg ">CEK</button>
+                <button class="btn btn-primary btn-block btn-lg shadow-lg ">Log In</button>
             </form>
             
             
