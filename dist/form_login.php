@@ -14,6 +14,7 @@
 <body>
     <div id="auth">
         
+<<<<<<< HEAD
     <?php 
 	if(isset($_GET['pesan'])){
 		if($_GET['pesan']=="gagal"){
@@ -21,8 +22,23 @@
 		}
 	}
 	?>
+=======
+    <?php
+    if (isset($_GET['pesan'])) {
+        if ($_GET['pesan'] == "gagal") {
+            echo "NIK Salah";
+        } elseif ($_GET['pesan'] == "login") {
+            echo "Anda telah berhasil login";
+            header("location:data_diri_pasien.php");
+            exit();
+        } elseif ($_GET['pesan'] == "belum login") {
+            echo "Anda harus login untuk mengakses halaman admin";
+        }
+    }
+    ?>
+>>>>>>> 046fbdbba5c7f1e4f0f22c7b3b26b7da01f19300
 
-<div class="row h-200">
+<div class="row h-100">
     <div class="col-lg-5 col-12">
         <div id="auth-left">
             
@@ -41,6 +57,7 @@
                 
                 <button class="btn btn-primary btn-block btn-lg shadow-lg ">CEK</button>
             </form>
+            
                 
               
                 
@@ -52,7 +69,6 @@
         <div id="auth-right">
             
         </div>
-
     </div>
 </div>
 

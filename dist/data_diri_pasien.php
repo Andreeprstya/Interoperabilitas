@@ -75,7 +75,7 @@
                 class="sidebar-item  ">
                 <a href="form_login.php" class='sidebar-link'>
                     
-                    <span>Logout</span>
+                    <span>Kembali</span>
                 </a>
             </li>
             
