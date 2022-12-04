@@ -38,10 +38,10 @@
         </div>
     </div>
     <div class="sidebar-menu">
-        <ul class="menu">
+    <ul class="menu">
              <li class="sidebar-title">Menu</li>
             <li
-                class="sidebar-item active">
+                class="sidebar-item ">
                 <a href="dokter_index.php" class='sidebar-link'>
                     
                     <span>Dashboard</span>
@@ -49,14 +49,14 @@
             </li>
             
             <li
-                class="sidebar-item">
+                class="sidebar-item ">
                 <a href="periksa_kesehatan.php" class='sidebar-link'>
                     
                     <span>Periksa Kesehatan</span>
                 </a>
             </li>
              <li
-                class="sidebar-item  ">
+                class="sidebar-item  active">
                 <a href="daftar_antrean.php" class='sidebar-link'>
                     
                     <span>Daftar Antrean</span>
@@ -91,13 +91,33 @@
             </header>
             
 <div class="page-heading">
-    <h3>Selamat datang dirumah sakit-sakitan</h3>
-    Website untuk mencetak surat keterangan sakit, biar ga ketinggalan jaman
-</div>
-<div class="page-content">
-    
+    <h3>Daftar Antrean</h3>
+    Berikut adalah daftar antrean dari pasien
 </div>
 
+
+	<div class="page-content">
+    <section id="multiple-column-form">
+        <div class="row match-height">
+            <div class="col-12">
+                <div class="card">
+                    <div class="card-header">
+                        <h4 class="card-title">Antrean</h4>
+                    </div>
+                    <div class="card-content">
+                        <div class="card-body">
+                            <form class="form">
+                                <div class="row">
+                                    
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+</div>
             
         </div>
     </div>
