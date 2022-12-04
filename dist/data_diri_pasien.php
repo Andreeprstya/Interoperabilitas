@@ -127,7 +127,8 @@
                     <td width = "2%"></td>
                     <td width = "15%">NIK</td>
                     <td width = "2%">:</td>
-                    <td width = "30%"><input value="<?php echo $d['nik']; ?>" name="nik"></td>
+                    <td width = "30%"><?php echo $d['nik']; ?></td>
+                    <input type="hidden" value="<?php echo $d['nik']; ?>" name="nik">   
                 </tr>
                 <tr>
                     <td width = "15%">Nama</td>
@@ -239,15 +240,11 @@
                 </tr>
                 <input type="hidden" value="<?php echo $d['berlaku']; ?>" name="berlaku">
                 <input type="hidden" value="<?php echo $d['tgl_buat']; ?>" name="tgl_buat">
-                <input type="hidden" value="0" name="bb">
-                <input type="hidden" value="0" name="tb">
-                <input type="hidden" value="0" name="tensi">
-                <input type="hidden" value="0" name="buta_warna">
                 <tr>
                     <td width = "15%"></td>
                     <td width = "2%"></td>
                     <td width = "30%"></td>
-                    <td width = "2%"><button class="btn btn-primary" type="submit">SIMPAN</td>
+                    <td width = "20%"><button class="btn icon icon-left btn-primary" type="submit"><i data-feather="edit"></i>SIMPAN</td>
                     <td width = "15%"></td>
                     <td width = "2%"></td>
                     <td width = "30%"></td>

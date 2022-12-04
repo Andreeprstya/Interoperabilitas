@@ -98,7 +98,20 @@
                 <h4 class="card-title">Nomor Antrean</h4>
             </div>
             <div class="card-body">
-                
+                <div class="col-md-6 mb-80">
+                    <h6>Tujuan Mencari Surat Keterangan Sehat</h6>
+                    <fieldset class="form-group">
+                        <select class="form-select" id="basicSelect">
+                            <option>Mencari Pekerjaan</option>
+                            <option>Mencari Perguruan Tinggi</option>
+                            <option>Mencari SIM</option>
+                        </select>
+                    </fieldset>
+                    <br>
+                    <br>
+                    <br>
+                    <br>
+                </div>
             </div>
         </div>
     </section>

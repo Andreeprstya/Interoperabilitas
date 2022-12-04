@@ -88,7 +88,7 @@
             
 <div class="page-heading">
     <h3>Surat Keterangan Sehat</h3>
-    Silahkan mencetak nomor antrean dengan mengklik button "Dapatkan Nomor"
+    Silahkan unduh file surat sehat anda!
 </div>
 
 
