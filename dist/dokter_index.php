@@ -57,14 +57,14 @@
             </li>
              <li
                 class="sidebar-item  ">
-                <a href="#" class='sidebar-link'>
+                <a href="daftar_antrean.php" class='sidebar-link'>
                     
                     <span>Daftar Antrean</span>
                 </a>
             </li>
              <li
                 class="sidebar-item  ">
-                <a href="#" class='sidebar-link'>
+                <a href="cetak_surat_sehat.php" class='sidebar-link'>
                     
                     <span>Cetak Surat Sehat</span>
                 </a>
