@@ -129,7 +129,7 @@
                         <input type="hidden" name="jam" value="<?php echo date("H:i:s"); ?>">
                     </fieldset>
                     <br>
-                    <button class="btn icon icon-left btn-success">
+                    <button class="btn icon icon-left btn-success" data-bs-toggle="modal" data-bs-target="#info">
                         <svg class="bi" width="1em" height="1em" fill="currentColor">
                             <use xlink:href="assets/images/bootstrap-icons.svg#printer"></use>
                             </svg>
@@ -141,8 +141,7 @@
             </div>
         </div>
     </section>
-</div>
-            
+</div>           
         </div>
     </div>
     <script src="assets/js/bootstrap.js"></script>

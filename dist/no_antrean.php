@@ -40,27 +40,22 @@
         text-align: center;
     }
  </style>
- <table>
- <tr>
- <th>No Antrian</th>
- </tr>
+ <h3>Antrian Surat Sehat</h3>
  <?php
  // koneksi database
     include 'koneksi.php';
-    $nik = $_SESSION['nik'];
  // menampilkan data pegawai
-    $data = mysqli_query($koneksi,"select * from tb_antrian where nik = $nik");
+    $data = mysqli_query($koneksi,"SELECT * from tb_antrian ORDER BY no_antrean DESC LIMIT 1");
     while($d = mysqli_fetch_array($data)){
  ?>
- <tr>
- <td><?php echo $d['no_antrean']; ?></td>
- </tr>
+ <tr><?php echo $d['no_antrean']; ?></tr>
+ <tr><?php echo $d['tanggal']; ?></tr>
+ <tr><?php echo $d['waktu']; ?></tr>
  <?php 
  }
  ?>
-    </table>
-    <script>
+<script>
  window.print();
- </script>
+</script>
 </body>
 </html>
