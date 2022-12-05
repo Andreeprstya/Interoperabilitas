@@ -16,6 +16,16 @@
 </head>
 
 <body>
+    
+<?php 
+    session_start();
+                    
+    // cek apakah yang mengakses halaman ini sudah login
+    if($_SESSION['nik']==""){
+        header("location:index.php?pesan=gagal");
+        }
+                    
+?>
     <div id="app">
         <div id="sidebar" class="active">
             <div class="sidebar-wrapper active">
@@ -101,14 +111,30 @@
                 <div class="col-md-6 mb-80">
                     <h6>Tujuan Mencari Surat Keterangan Sehat</h6>
                     <fieldset class="form-group">
-                        <select class="form-select" id="basicSelect">
+                    <form id="form_combobox" name="form_combobox" method="POST" action="proses_cetak.php">
+                        <select class="form-select" id="basicSelect" name="tujuan">
                             <option>Mencari Pekerjaan</option>
                             <option>Mencari Perguruan Tinggi</option>
                             <option>Mencari SIM</option>
                         </select>
+                        <?php
+                            include 'koneksi.php';
+                            $nik = $_SESSION['nik'];
+                            $query = "SELECT * FROM tb_ktp where nik = $nik";
+                            $data = mysqli_query($koneksi, $query);
+                            while ($d = mysqli_fetch_array($data)) {
+                        ?>
+                        <input type="hidden" value="<?php echo $d['nik']; ?>" name="nik">
+                        <input type="hidden" name="tanggal" value="<?php echo date("Y-m-d"); ?>">
+                        <input type="hidden" name="jam" value="<?php echo date("H:i:s"); ?>">
                     </fieldset>
                     <br>
-                    <br>
+                    <button class="btn icon icon-left btn-success">
+                        <svg class="bi" width="1em" height="1em" fill="currentColor">
+                            <use xlink:href="assets/images/bootstrap-icons.svg#printer"></use>
+                            </svg>
+                    Cetak</button>
+                    </form>
                     <br>
                     <br>
                 </div>
@@ -125,7 +151,7 @@
 <!-- Need: Apexcharts -->
 <script src="assets/extensions/apexcharts/apexcharts.min.js"></script>
 <script src="assets/js/pages/dashboard.js"></script>
-
+<?php } ?>
 </body>
 
 </html>
