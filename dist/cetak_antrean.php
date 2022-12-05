@@ -124,6 +124,7 @@
                             $data = mysqli_query($koneksi, $query);
                             while ($d = mysqli_fetch_array($data)) {
                         ?>
+                        <?php date_default_timezone_set('Asia/Singapore') ?>
                         <input type="hidden" value="<?php echo $d['nik']; ?>" name="nik">
                         <input type="hidden" name="tanggal" value="<?php echo date("Y-m-d"); ?>">
                         <input type="hidden" name="jam" value="<?php echo date("H:i:s"); ?>">

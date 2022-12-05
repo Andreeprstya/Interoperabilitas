@@ -1,12 +1,3 @@
-<?php 
- 	$tujuan =$_POST['tujuan'];
-    $nik = $_POST['nik'];
-    $tanggal = $_POST['tanggal'];
-    $jam = $_POST['jam'];
-
- 	echo "Bahasa Pemrograman yang Anda Sukai adalah $tujuan dengan nik $nik pada $tanggal pukul $jam";
-?>
-
 <?php
     include 'koneksi.php';
 
@@ -15,11 +6,13 @@
     $tanggal = $_POST['tanggal'];
     $jam = $_POST['jam'];
     
-    $data = mysqli_query($koneksi,"SELECT * from tb_antrian ORDER BY no_antrean DESC LIMIT 1");
+    $data = mysqli_query($koneksi,"SELECT * from tb_antrian ORDER BY id DESC LIMIT 1");
     while($d = mysqli_fetch_array($data)){
+    
+    date_default_timezone_set('Asia/Singapore');
 
-    if($tanggal == date("Y-m-d")){
-            $no=$d['no_antrean']+1;
+    if($d['tanggal'] == date("Y-m-d")){
+        $no=$d['no_antrean']+1;
     }else{
         $no=1;
     }

@@ -45,10 +45,10 @@
  // koneksi database
     include 'koneksi.php';
  // menampilkan data pegawai
-    $data = mysqli_query($koneksi,"SELECT * from tb_antrian ORDER BY no_antrean DESC LIMIT 1");
+    $data = mysqli_query($koneksi,"SELECT * from tb_antrian ORDER BY id DESC LIMIT 1");
     while($d = mysqli_fetch_array($data)){
  ?>
- <tr><?php echo $d['no_antrean']; ?></tr>
+ <td><?php echo $d['no_antrean']; ?></td>
  <tr><?php echo $d['tanggal']; ?></tr>
  <tr><?php echo $d['waktu']; ?></tr>
  <?php 
