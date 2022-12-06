@@ -40,13 +40,6 @@
     <div class="sidebar-menu">
     <ul class="menu">
              <li class="sidebar-title">Menu</li>
-            <li
-                class="sidebar-item ">
-                <a href="dokter_index.php" class='sidebar-link'>
-                    
-                    <span>Dashboard</span>
-                </a>
-            </li>
             
             <li
                 class="sidebar-item ">
@@ -108,7 +101,34 @@
                         <div class="card-body">
                             <form class="form">
                                 <div class="row">
-                                    
+                                <table class="table table-striped">
+                                    <tr>
+                                        <th>no antrian</th>
+                                        <th>nik</th>
+                                        <th>tujuan</th>
+                                        <th>tanggal</th>
+                                        <th>waktu</th>
+                                    </tr>
+                                <?php
+                                    date_default_timezone_set('Asia/Singapore');
+                                    $today=date('Y-m-d');
+                                    include 'koneksi.php';
+                                    $query = "SELECT * FROM tb_antrian where tanggal = '$today' ORDER BY id DESC";
+                                    $data = mysqli_query($koneksi, $query);
+                                    while ($d = mysqli_fetch_array($data)) {
+                                ?>
+                                
+                                    <tr>
+                                        <td><?php echo $d['no_antrean']; ?></td>
+                                        <td><?php echo $d['nik']; ?></td>
+                                        <td><?php echo $d['tujuan']; ?></td>
+                                        <td><?php echo $d['tanggal']; ?></td>
+                                        <td><?php echo $d['waktu']; ?></td>
+                                    </tr>
+                                    <?php
+                                        }
+                                    ?>    
+                                </table>
                                 </div>
                             </form>
                         </div>
@@ -117,8 +137,7 @@
             </div>
         </div>
     </section>
-</div>
-            
+</div>       
         </div>
     </div>
     <script src="assets/js/bootstrap.js"></script>

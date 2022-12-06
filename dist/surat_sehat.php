@@ -16,6 +16,15 @@
 </head>
 
 <body>
+<?php 
+	session_start();
+ 
+	// cek apakah yang mengakses halaman ini sudah login
+	if($_SESSION['nik']==""){
+		header("location:index.php?pesan=gagal");
+	}
+ 
+	?>
     <div id="app">
         <div id="sidebar" class="active">
             <div class="sidebar-wrapper active">
@@ -97,9 +106,32 @@
         <div class="card">
             <div class="card-header">
                 <h4 class="card-title">Unduh Surat Sehat</h4>
+                TerimaKasih telah mempercayai rumah sakit-sakitan untuk mengecek kesehatan anda
+                <br>
+                Silakan unduh surat sakit anda disini. 
             </div>
             <div class="card-body">
-                
+
+            <?php
+                include 'koneksi.php';
+                $nik = $_SESSION['nik'];
+                $query = "SELECT * FROM tb_sks where nik = $nik";
+                $data = mysqli_query($koneksi, $query);
+                while ($d = mysqli_fetch_array($data)) {
+                    if($d['nik']==$nik){
+                        ?>
+                        <a href="surat.php">
+                        <button class="btn icon icon-left btn-success" data-bs-toggle="modal" data-bs-target="#info">
+                                    <svg class="bi" width="1em" height="1em" fill="currentColor">
+                                        <use xlink:href="assets/images/bootstrap-icons.svg#printer"></use>
+                                        </svg>
+                                Cetak</button></a>
+                                <?php
+                    }else{
+                        echo "Anda Belum melakukan cek kesehatan";
+                    }
+            ?>
+            
             </div>
         </div>
     </section>
@@ -113,7 +145,9 @@
 <!-- Need: Apexcharts -->
 <script src="assets/extensions/apexcharts/apexcharts.min.js"></script>
 <script src="assets/js/pages/dashboard.js"></script>
-
+<?php
+                }
+?>
 </body>
 
 </html>
