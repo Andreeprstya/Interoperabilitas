@@ -104,6 +104,26 @@
                     <div class="card-header">
                         <h4 class="card-title">Pemeriksaan</h4>
                     </div>
+                    <?php 
+                        include 'koneksi.php';
+                        $id = $_GET['id'];
+                        $data = mysqli_query($koneksi,"SELECT * from tb_antrian where id='$id'");
+                        while($d = mysqli_fetch_array($data)){
+                        $nik=$d['nik'];
+                    ?>
+                    <h5 class="mb-0 ms-4">NIK : <?php echo $d['nik']; ?></h5>
+                    <?php
+                        }
+                    ?>
+                    <?php 
+                        include 'koneksi.php';
+                        $data = mysqli_query($koneksi,"SELECT * from tb_ktp where nik='$nik'");
+                        while($p = mysqli_fetch_array($data)){
+                    ?>
+                    <h5 class="mb-0 ms-4">NAMA : <?php echo $p['nama']; ?></h5>
+                    <?php
+                        }
+                        ?>
                     <div class="card-content">
                         <div class="card-body">
                             <form class="form">
@@ -112,41 +132,46 @@
                                         <div class="form-group">
                                             <label for="first-name-column">Suhu Tubuh</label>
                                             <input type="text" id="first-name-column" class="form-control"
-                                                placeholder="Suhu Tubuh" name="fname-column">
+                                                placeholder="Suhu Tubuh" name="suhu">
                                         </div>
                                     </div>
                                     <div class="col-md-6 col-12">
                                         <div class="form-group">
                                             <label for="last-name-column">Buta Warna</label>
                                             <input type="text" id="last-name-column" class="form-control"
-                                                placeholder="Buta Warna" name="lname-column">
+                                                placeholder="Buta Warna" name="buta warna">
                                         </div>
                                     </div>
                                     <div class="col-md-6 col-12">
                                         <div class="form-group">
                                             <label for="city-column">Tensi</label>
                                             <input type="text" id="city-column" class="form-control" placeholder="Tensi"
-                                                name="city-column">
+                                                name="tensi">
                                         </div>
                                     </div>
                                     <div class="col-md-6 col-12">
                                         <div class="form-group">
                                             <label for="country-floating">Berat Badan</label>
                                             <input type="text" id="country-floating" class="form-control"
-                                                name="country-floating" placeholder="Berat Badam">
+                                                name="bb" placeholder="Berat Badam">
                                         </div>
                                     </div>
                                     <div class="col-md-6 col-12">
                                         <div class="form-group">
                                             <label for="company-column">Tinggi Badan</label>
                                             <input type="text" id="company-column" class="form-control"
-                                                name="company-column" placeholder="Tinggi Badan">
+                                                name="tb" placeholder="Tinggi Badan">
                                         </div>
                                     </div>
-                                    
-                                   
+                                    <div class="col-md-6 col-12">
+                                        <div class="form-group">
+                                            <label for="company-column">Keterangan</label>
+                                            <input type="text" id="company-column" class="form-control"
+                                                name="keterangan" placeholder="Keterangan">
+                                        </div>
+                                    </div> 
                                     <div class="col-12 d-flex justify-content-end">
-                                        <button type="submit" class="btn btn-primary me-1 mb-1">Submit</button>
+                                        <button type="submit" class="btn btn-primary me-1 mb-1">Cetak</button>
                                         <button type="reset" class="btn btn-light-secondary me-1 mb-1">Reset</button>
                                     </div>
                                 </div>

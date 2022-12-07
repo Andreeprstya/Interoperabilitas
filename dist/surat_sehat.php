@@ -118,7 +118,7 @@
                 $query = "SELECT * FROM tb_sks where nik = $nik";
                 $data = mysqli_query($koneksi, $query);
                 while ($d = mysqli_fetch_array($data)) {
-                    if($d['nik']==$nik){
+                    if(empty($d['nik'])){
                         ?>
                         <a href="surat.php">
                         <button class="btn icon icon-left btn-success" data-bs-toggle="modal" data-bs-target="#info">
@@ -126,9 +126,9 @@
                                         <use xlink:href="assets/images/bootstrap-icons.svg#printer"></use>
                                         </svg>
                                 Cetak</button></a>
-                                <?php
+                        <?php
                     }else{
-                        echo "Anda Belum melakukan cek kesehatan";
+                        echo "<font color='black'>Anda Belum melakukan cek kesehatan</font>";
                     }
             ?>
             

@@ -101,29 +101,34 @@
                         <div class="card-body">
                             <form class="form">
                                 <div class="row">
-                                <table class="table table-striped">
-                                    <tr>
-                                        <th>no antrian</th>
-                                        <th>nik</th>
-                                        <th>tujuan</th>
-                                        <th>tanggal</th>
-                                        <th>waktu</th>
-                                    </tr>
+                                <table class="table table-bordered mb-0">
+                                    <thead>
+                                        <tr>
+                                            <th>NO. ANTRIAN</th>
+                                            <th>NIK</th>
+                                            <th>TUJUAN</th>
+                                            <th>TANGGAL</th>
+                                            <th>WAKTU</th>
+                                            <th>ACTION</TH>
+                                        </tr>
+                                    </thead>
                                 <?php
                                     date_default_timezone_set('Asia/Singapore');
                                     $today=date('Y-m-d');
                                     include 'koneksi.php';
-                                    $query = "SELECT * FROM tb_antrian where tanggal = '$today' ORDER BY id DESC";
+                                    $query = "SELECT * FROM tb_antrian where tanggal = '$today' ORDER BY id ASC";
                                     $data = mysqli_query($koneksi, $query);
                                     while ($d = mysqli_fetch_array($data)) {
                                 ?>
-                                
                                     <tr>
                                         <td><?php echo $d['no_antrean']; ?></td>
                                         <td><?php echo $d['nik']; ?></td>
                                         <td><?php echo $d['tujuan']; ?></td>
                                         <td><?php echo $d['tanggal']; ?></td>
                                         <td><?php echo $d['waktu']; ?></td>
+                                        <td class="badge bg-success">
+                                            <a href="periksa_kesehatan.php?id=<?php echo $d['id']; ?>">Periksa</a>
+                                        </td>
                                     </tr>
                                     <?php
                                         }
