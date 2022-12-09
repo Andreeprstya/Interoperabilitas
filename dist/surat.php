@@ -36,10 +36,11 @@
 				</center>
 				</td>
 			</tr>
+			
+		<table width="625">
 			<tr>
 				<td colspan="2"><hr></td>
 			</tr>
-		<table width="625">
 			<tr>
 				<td class="text2">Jember, 16 mei 2019</td>
 			</tr>
@@ -48,30 +49,14 @@
 		<table>
 		<font size="5"><b>SURAT KESEHATAN</b></font><br>
 		<font size="3"><i>Nomor : 445 / RS / TU-I / 2000 / 27.28</i></font>
-			<tr class="text2">
-				<td>Nomer</td>
-				<td width="572">: -</td>
-			</tr>
-			<tr>
-				<td>Perihal</td>
-				<td width="564">: -</td>
-			</tr>
+			
 		</table>
 		<br>
+	
 		<table width="625">
 			<tr>
 		       <td>
-			       <font size="2">Kpd yth.<br>Siswa Smk Baitul Hikmah kelas x<br>Di tempat</font>
-		       </td>
-		    </tr>
-		</table>
-		<br>
-		<table width="625">
-			<tr>
-		       <td>
-			       <font size="2">Assalamu'alaikum wr.wb<br>Dalam rangka praktikum simulasi digital yg jatuh pada tanggal 16 mei 2019
-                    Siswa smk baitul hikmah <b>kelas X</b> akan mengadakan peraktikum, jadi di harapkan siswa di minta hadir
-                    pada tempat yang sudah di siapkan.
+			       <font size="2">Yang bertanda tangan dibawah ini adalah<br>Kepala Rumah Sakit-sakitan Daerah Jimbaran Kabupaten Badung menerangkan bahwa :
                 </font>
 		       </td>
 		    </tr>
@@ -80,27 +65,59 @@
 		</table>
 		<table>
 			<tr class="text2">
-				<td>Hari Tanggal</td>
-				<td width="541">: <b>Selasa/16 mei 2019</b></td>
+				<td><b>Nama</b></td>
+				<td>: Bapake</td>
 			</tr>
 			<tr>
-				<td>Jam</td>
-				<td width="525">: 08:30</td>
+				<td><b>Tempat Lahir</b></td>
+				<td width="525">: Dirumah</td>
 			</tr>
 			<tr>
-				<td>Tempat</td>
-				<td width="525">: Ruang lap komputer</td>
+				<td><b>Tanggal Lahir</b></td>
+				<td width="525">: 8 Desember 2000</td>
+			</tr>
+			<tr>
+				<td><b>Alamat</b></td>
+				<td width="525">: Jln. jalan-jalan br. jalan-jalan</td>
 			</tr>
 		</table>
+		<br>
 		<br>
 		<table width="625">
 			<tr>
 		       <td>
-			       <font size="2">Diharapkan atas kehadiranya, Demikian surat ini di sampaikan, atas perhatian dan kerjasamanya kami
-                    ucapkan terima kasih.<br><br>Wassalamu'alaikum wr.wb.
+			       <font size="2">Demikian surat keterangan ini diperbuat untuk kepentingan :<br>
+				   <i>Mencari Pekerjaan</i>
                     </font>
 		       </td>
 		    </tr>
+		</table>
+		<br>
+		<table>
+			<tr class="text2">
+				<td><b>Berat Badan</b></td>
+				<td>: Berat Sekali</td>
+			</tr>
+			<tr>
+				<td><b>Tinggi Badan</b></td>
+				<td width="525">: Tinggi Sekali</td>
+			</tr>
+			<tr>
+				<td><b>Buta Warna</b></td>
+				<td width="525">: Buta Ngawur</td>
+			</tr>
+			<tr>
+				<td><b>Tensi</b></td>
+				<td width="525">: Emosi</td>
+			</tr>
+			<tr>
+				<td><b>Suhu Badan</b></td>
+				<td width="525">: Membara</td>
+			</tr>
+			<tr>
+				<td><b>Keterangan</b></td>
+				<td width="525">: Terang seterang-terangnya</td>
+			</tr>
 		</table>
 		<br>
 		<table width="625">
