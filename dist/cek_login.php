@@ -5,7 +5,7 @@ include 'koneksi.php';
 
 $nik = $_POST['nik'];
 
-$data = mysqli_query($koneksi,"select * from tb_ktp where nik='$nik'");
+$data = mysqli_query($koneksi,"SELECT * from tb_ktp where nik='$nik'");
 $cek = mysqli_num_rows($data);
 
 if ($cek > 0) {

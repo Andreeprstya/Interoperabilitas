@@ -117,8 +117,9 @@
                 $nik = $_SESSION['nik'];
                 $query = "SELECT * FROM tb_sks where nik = $nik";
                 $data = mysqli_query($koneksi, $query);
+                $cek = mysqli_num_rows($data);
                 while ($d = mysqli_fetch_array($data)) {
-                    if(empty($d['nik'])){
+                    if($cek>0){
                         ?>
                         <a href="surat.php">
                         <button class="btn icon icon-left btn-success" data-bs-toggle="modal" data-bs-target="#info">
@@ -128,10 +129,9 @@
                                 Cetak</button></a>
                         <?php
                     }else{
-                        echo "<font color='black'>Anda Belum melakukan cek kesehatan</font>";
+                        echo "Anda Belum melakukan cek kesehatan";
                     }
-            ?>
-            
+                    ?>
             </div>
         </div>
     </section>

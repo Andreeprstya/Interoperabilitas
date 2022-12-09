@@ -4,9 +4,9 @@ session_start();
 include 'koneksi.php';
 
 $username = $_POST['username'];
-$password = $_POST['password'];
+$password = MD5($_POST['password']);
 
-$data = mysqli_query($koneksi,"select * from tb_dokter where username='$username' and password='$password'");
+$data = mysqli_query($koneksi,"SELECT * from tb_dokter where username='$username' AND password='$password'");
 $cek = mysqli_num_rows($data);
 
 if ($cek > 0) {

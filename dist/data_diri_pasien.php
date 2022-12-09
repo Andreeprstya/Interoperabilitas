@@ -127,7 +127,8 @@
                     <td width = "2%"></td>
                     <td width = "15%">NIK</td>
                     <td width = "2%">:</td>
-                    <td width = "30%"><input type="text" value="<?php echo $d['nik']; ?>" name="nik" readonly="readonly"></td>   
+                    <td width = "30%"><?php echo $d['nik']; ?></td>
+                    <input type="hidden" value="<?php echo $d['nik']; ?>" name="nik" readonly="readonly">
                 </tr>
                 <tr>
                     <td width = "15%">Nama</td>
