@@ -26,13 +26,13 @@
 	<center>
 		<table>
 			<tr>
-				<td><img src="LOGO.jpg" width="90" height="90"></td>
+				<td><img src="pngegg.png" width="90" height="90"></td>
 				<td>
 				<center>
-					<font size="4">LEMBAGA RUMAH SAKIT</font><br>
+					<font size="4">PEMERINTAH KABUPATEN BADUNG	</font><br>
 					<font size="5"><b>RUMAH SAKIT-SAKITAN</b></font><br>
-					<font size="2">Bidang Keahlian : Bisnis dan Menejemen - Teknologi informasi dan Komunikasi</font><br>
-					<font size="2"><i>Jln Cut Nya'Dien No. 02 Kode Pos : 68173 Telp./Fax (0331)758005 Tempurejo Jember Jawa Timur</i></font>
+					<font size="2"><i>Jln Jalanan No. 100 Kode Pos : 80362 Telp./Fax 08970274763</i></font><br>
+					<font size="3"><i>Jimbaran Bali</i></font>
 				</center>
 				</td>
 			</tr>
@@ -46,6 +46,8 @@
 		</table>
 		</table>
 		<table>
+		<font size="5"><b>SURAT KESEHATAN</b></font><br>
+		<font size="3"><i>Nomor : 445 / RS / TU-I / 2000 / 27.28</i></font>
 			<tr class="text2">
 				<td>Nomer</td>
 				<td width="572">: -</td>
