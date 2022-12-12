@@ -47,10 +47,7 @@
     </div>
     <div class="sidebar-menu">
         <ul class="menu">
-            <li class="sidebar-title">Menu</li>
-
             <li
-                
                 class="sidebar-item active ">
                 <a href="data_diri_pasien.php" class='sidebar-link'>
                     
@@ -128,7 +125,7 @@
                     <td width = "15%">NIK</td>
                     <td width = "2%">:</td>
                     <td width = "30%"><?php echo $d['nik']; ?></td>
-                    <input type="hidden" value="<?php echo $d['nik']; ?>" name="nik" readonly="readonly">
+                    <input type="hidden" value="<?php echo $d['nik']; ?>" name="nik">
                 </tr>
                 <tr>
                     <td width = "15%">Nama</td>
@@ -137,7 +134,7 @@
                     <td width = "10%"></td>
                     <td width = "15%">Nama</td>
                     <td width = "2%">:</td>
-                    <td width = "30%"><input class="form-control form-control-sm" value="<?php echo $d['nama']; ?>" name="nama"></td>
+                    <td width = "30%"><input value="<?php echo $d['nama']; ?>" name="nama"></td>
                 </tr>
                 <tr>
                     <td width = "15%">Tempat Lahir</td>
@@ -146,7 +143,7 @@
                     <td></td>
                     <td width = "15%">Tempat Lahir</td>
                     <td width = "2%">:</td>
-                    <td width = "30%"><input class="form-control form-control-sm" value="<?php echo $d['tempat_lahir']; ?>" name="tempat_lahir"></td>
+                    <td width = "30%"><input value="<?php echo $d['tempat_lahir']; ?>" name="tempat_lahir"></td>
                 </tr>
                 <tr>
                     <td width = "15%">Tanggal Lahir</td>
@@ -155,7 +152,7 @@
                     <td width = "2%"></td>
                     <td width = "15%">Tanggal Lahir</td>
                     <td width = "2%">:</td>
-                    <td width = "30%"><input class="form-control form-control-sm" value="<?php echo $d['tgl_lahir']; ?>" name="tgl_lahir"></td>
+                    <td width = "30%"><input value="<?php echo $d['tgl_lahir']; ?>" name="tgl_lahir"></td>
                 </tr>
                 <tr>
                     <td width = "15%">Jenis Kelamin</td>
@@ -164,7 +161,7 @@
                     <td width = "2%"></td>
                     <td width = "15%">Jenis Kelamin</td>
                     <td width = "2%">:</td>
-                    <td width = "30%"><input class="form-control form-control-sm" value="<?php echo $d['jenis_kelamin']; ?>" name="jenis_kelamin"></td>
+                    <td width = "30%"><input value="<?php echo $d['jenis_kelamin']; ?>" name="jenis_kelamin"></td>
                 </tr>
                 <tr>
                     <td width = "15%">Golongan Darah</td>
@@ -173,7 +170,7 @@
                     <td width = "2%"></td>
                     <td width = "15%">Golongan Darah</td>
                     <td width = "2%">:</td>
-                    <td width = "30%"><input class="form-control form-control-sm" value="<?php echo $d['gol_darah']; ?>" name="gol_darah"></td>
+                    <td width = "30%"><input value="<?php echo $d['gol_darah']; ?>" name="gol_darah"></td>
                 </tr>
                 <tr>
                     <td width = "15%">Alamat</td>
@@ -182,7 +179,7 @@
                     <td width = "2%"></td>
                     <td width = "15%">Alamat</td>
                     <td width = "2%">:</td>
-                    <td width = "30%"><input class="form-control form-control-sm" value="<?php echo $d['alamat']; ?>" name="alamat"></td>
+                    <td width = "30%"><input value="<?php echo $d['alamat']; ?>" name="alamat"></td>
                 </tr>
                 <tr>
                     <td width = "15%">Kelurahan</td>
@@ -191,7 +188,7 @@
                     <td width = "2%"></td>
                     <td width = "15%">Kelurahan</td>
                     <td width = "2%">:</td>
-                    <td width = "30%"><input class="form-control form-control-sm" value="<?php echo $d['kelurahan']; ?>" name="kelurahan"></td>
+                    <td width = "30%"><input value="<?php echo $d['kelurahan']; ?>" name="kelurahan"></td>
                 </tr>
                 <tr>
                     <td width = "15%">Kecamatan</td>
@@ -200,7 +197,7 @@
                     <td width = "2%"></td>
                     <td width = "15%">Kecamatan</td>
                     <td width = "2%">:</td>
-                    <td width = "30%"><input class="form-control form-control-sm" value="<?php echo $d['kecamatan']; ?>" name="kecamatan"></td>
+                    <td width = "30%"><input value="<?php echo $d['kecamatan']; ?>" name="kecamatan"></td>
                 </tr>
                 <tr>
                     <td width = "15%">Agama</td>
@@ -209,7 +206,7 @@
                     <td width = "2%"></td>
                     <td width = "15%">Agama</td>
                     <td width = "2%">:</td>
-                    <td width = "30%"><input class="form-control form-control-sm" value="<?php echo $d['agama']; ?>" name="agama"></td>
+                    <td width = "30%"><input value="<?php echo $d['agama']; ?>" name="agama"></td>
                 </tr>
                 <tr>
                     <td width = "15%">Status Kawin</td>
@@ -218,7 +215,7 @@
                     <td width = "2%"></td>
                     <td width = "15%">Status Kawin</td>
                     <td width = "2%">:</td>
-                    <td width = "30%"><input class="form-control form-control-sm" value="<?php echo $d['status_kawin']; ?>" name="status_kawin"></td>
+                    <td width = "30%"><input value="<?php echo $d['status_kawin']; ?>" name="status_kawin"></td>
                 </tr>
                 <tr>
                     <td width = "15%">Pekerjaan</td>
@@ -227,7 +224,7 @@
                     <td width = "2%"></td>
                     <td width = "15%">Pekerjaan</td>
                     <td width = "2%">:</td>
-                    <td width = "30%"><input class="form-control form-control-sm" value="<?php echo $d['pekerjaan']; ?>" name="pekerjaan"></td>
+                    <td width = "30%"><input value="<?php echo $d['pekerjaan']; ?>" name="pekerjaan"></td>
                 </tr>
                 <tr>
                     <td width = "15%">Kewarganegaraan</td>
@@ -236,7 +233,7 @@
                     <td width = "2%"></td>
                     <td width = "15%">Kewarganegaraan</td>
                     <td width = "2%">:</td>
-                    <td width = "30%"><input class="form-control form-control-sm" value="<?php echo $d['kewarganegaraan']; ?>" name="kewarganegaraan"></td>
+                    <td width = "30%"><input value="<?php echo $d['kewarganegaraan']; ?>" name="kewarganegaraan"></td>
                 </tr>
                 <input type="hidden" value="<?php echo $d['berlaku']; ?>" name="berlaku">
                 <input type="hidden" value="<?php echo $d['tgl_buat']; ?>" name="tgl_buat">

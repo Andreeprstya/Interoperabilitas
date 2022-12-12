@@ -48,9 +48,6 @@
     </div>
     <div class="sidebar-menu">
         <ul class="menu">
-            <li class="sidebar-title">Menu</li>
-            
-            
             <li
                 
                 class="sidebar-item  ">
@@ -111,27 +108,13 @@
                 Silakan unduh surat sakit anda disini. 
             </div>
             <div class="card-body">
-
-            <?php
-                include 'koneksi.php';
-                $nik = $_SESSION['nik'];
-                $query = "SELECT * FROM tb_sks where nik = $nik";
-                $data = mysqli_query($koneksi, $query);
-                $cek = mysqli_num_rows($data);
-                while ($d = mysqli_fetch_array($data)) {
-                    if($cek>0){
-                        ?>
-                        <a href="surat.php">
+                    <a href="cek_surat.php">
                         <button class="btn icon icon-left btn-success" data-bs-toggle="modal" data-bs-target="#info">
-                                    <svg class="bi" width="1em" height="1em" fill="currentColor">
-                                        <use xlink:href="assets/images/bootstrap-icons.svg#printer"></use>
-                                        </svg>
-                                Cetak</button></a>
-                        <?php
-                    }else{
-                        echo "Anda Belum melakukan cek kesehatan";
-                    }
-                    ?>
+                            <svg class="bi" width="1em" height="1em" fill="currentColor">
+                                <use xlink:href="assets/images/bootstrap-icons.svg#printer"></use>
+                            </svg>Cetak
+                        </button>
+                    </a>
             </div>
         </div>
     </section>
@@ -145,9 +128,6 @@
 <!-- Need: Apexcharts -->
 <script src="assets/extensions/apexcharts/apexcharts.min.js"></script>
 <script src="assets/js/pages/dashboard.js"></script>
-<?php
-                }
-?>
 </body>
 
 </html>

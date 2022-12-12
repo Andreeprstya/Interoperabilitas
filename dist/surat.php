@@ -42,7 +42,7 @@
 				<td colspan="2"><hr></td>
 			</tr>
 			<tr>
-				<td class="text2">Jember, 16 mei 2019</td>
+				<td class="text2">Waktu Pemeriksaan : hh:mm:ss</td>
 			</tr>
 		</table>
 		</table>
@@ -53,7 +53,7 @@
 		</table>
 		<br>
 	
-		<table width="625">
+		<table width="650">
 			<tr>
 		       <td>
 			       <font size="2">Yang bertanda tangan dibawah ini adalah<br>Kepala Rumah Sakit-sakitan Daerah Jimbaran Kabupaten Badung menerangkan bahwa :
@@ -69,12 +69,16 @@
 				<td>: Bapake</td>
 			</tr>
 			<tr>
-				<td><b>Tempat Lahir</b></td>
-				<td width="525">: Dirumah</td>
+				<td><b>Umur</b></td>
+				<td width="525">: 500SM</td>
 			</tr>
 			<tr>
-				<td><b>Tanggal Lahir</b></td>
-				<td width="525">: 8 Desember 2000</td>
+				<td><b>Jenis Kelamin</b></td>
+				<td width="525">: Ganda</td>
+			</tr>
+			<tr>
+				<td><b>Pekerjaan</b></td>
+				<td width="525">: Pengangguran</td>
 			</tr>
 			<tr>
 				<td><b>Alamat</b></td>
@@ -83,11 +87,11 @@
 		</table>
 		<br>
 		<br>
-		<table width="625">
+		<table width="650">
 			<tr>
 		       <td>
 			       <font size="2">Demikian surat keterangan ini diperbuat untuk kepentingan :<br>
-				   <i>Mencari Pekerjaan</i>
+				   <i><b>Mencari Pekerjaan<b></i>
                     </font>
 		       </td>
 		    </tr>
@@ -96,19 +100,23 @@
 		<table>
 			<tr class="text2">
 				<td><b>Berat Badan</b></td>
-				<td>: Berat Sekali</td>
+				<td width="525">: Berat Sekali</td>
 			</tr>
 			<tr>
 				<td><b>Tinggi Badan</b></td>
 				<td width="525">: Tinggi Sekali</td>
 			</tr>
 			<tr>
-				<td><b>Buta Warna</b></td>
-				<td width="525">: Buta Ngawur</td>
+				<td><b>Golongan Darah</b></td>
+				<td width="525">: Z</td>
 			</tr>
 			<tr>
-				<td><b>Tensi</b></td>
+				<td><b>Tekanan Darah</b></td>
 				<td width="525">: Emosi</td>
+			</tr>
+			<tr>
+				<td><b>Buta Warna</b></td>
+				<td width="525">: Buta Ngawur</td>
 			</tr>
 			<tr>
 				<td><b>Suhu Badan</b></td>
@@ -118,12 +126,16 @@
 				<td><b>Keterangan</b></td>
 				<td width="525">: Terang seterang-terangnya</td>
 			</tr>
+			<tr>
+				<td><b>Berlaku Sampai</b></td>
+				<td width="525">: dd/mm/yyyy</td>
+			</tr>
 		</table>
 		<br>
 		<table width="625">
 			<tr>
 				<td width="430"><br><br><br><br></td>
-				<td class="text" align="center">Wali kelas<br><br><br><br>Bpk Fauzy.s.kom</td>
+				<td class="text" align="center">Jimbaran, dd/mm/yyyy<br><br><br><br>Bpk Fauzy.s.kom</td>
 			</tr>
 	     </table>
 	</center>

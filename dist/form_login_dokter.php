@@ -21,7 +21,7 @@
             echo "Username atau Password salah";
         } elseif ($_GET['pesan'] == "login") {
             echo "Anda telah berhasil login";
-            header("location:dokter_index.php");
+            header("location:daftar_antrean.php");
             exit();
         } elseif ($_GET['pesan'] == "belum login") {
             echo "Anda harus login untuk mengakses halaman admin";

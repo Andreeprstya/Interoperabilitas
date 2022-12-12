@@ -49,9 +49,6 @@
     </div>
     <div class="sidebar-menu">
         <ul class="menu">
-            <li class="sidebar-title">Menu</li>
-            
-            
             <li
                 
                 class="sidebar-item  ">
@@ -117,6 +114,9 @@
                             <option>Mencari Perguruan Tinggi</option>
                             <option>Mencari SIM</option>
                         </select>
+                        <br>
+                        <h6>Email</h6>
+                        <input class="form-control" type="email" name="email" placeholder="Masukan Email Anda">
                         <?php
                             include 'koneksi.php';
                             $nik = $_SESSION['nik'];

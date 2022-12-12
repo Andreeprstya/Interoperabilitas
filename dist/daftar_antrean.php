@@ -39,13 +39,11 @@
     </div>
     <div class="sidebar-menu">
     <ul class="menu">
-             <li class="sidebar-title">Menu</li>
-            
-            <li
-                class="sidebar-item ">
-                <a href="periksa_kesehatan.php" class='sidebar-link'>
+             <li
+                class="sidebar-item">
+                <a href="profile.php" class='sidebar-link'>
                     
-                    <span>Periksa Kesehatan</span>
+                    <span>Profile</span>
                 </a>
             </li>
              <li

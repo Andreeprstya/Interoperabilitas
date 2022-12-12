@@ -39,24 +39,15 @@
     </div>
     <div class="sidebar-menu">
     <ul class="menu">
-             <li class="sidebar-title">Menu</li>
-            <li
-                class="sidebar-item ">
-                <a href="dokter_index.php" class='sidebar-link'>
+             <li
+                class="sidebar-item">
+                <a href="profile.php" class='sidebar-link'>
                     
-                    <span>Dashboard</span>
-                </a>
-            </li>
-            
-            <li
-                class="sidebar-item active">
-                <a href="periksa_kesehatan.php" class='sidebar-link'>
-                    
-                    <span>Periksa Kesehatan</span>
+                    <span>Profile</span>
                 </a>
             </li>
              <li
-                class="sidebar-item  ">
+                class="sidebar-item active">
                 <a href="daftar_antrean.php" class='sidebar-link'>
                     
                     <span>Daftar Antrean</span>
@@ -119,14 +110,45 @@
                         include 'koneksi.php';
                         $data = mysqli_query($koneksi,"SELECT * from tb_ktp where nik='$nik'");
                         while($p = mysqli_fetch_array($data)){
+                            date_default_timezone_set('Asia/Singapore');
+                            $today=date('Y-m-d');
+                            $time=date("H:i:s");
+                            $berlaku = date('Y-m-d',strtotime('+6 month', strtotime($today)));
+
+                            $tgl_lahir_y = date('Y', strtotime($p['tgl_lahir']));
+                            $today_y = date('Y', strtotime("today"));
+                            $tgl_lahir_b = date('m', strtotime($p['tgl_lahir']));
+                            $today_b = date('m', strtotime("today"));
+                            $tgl_lahir_h = date('d', strtotime($p['tgl_lahir']));
+                            $today_h = date('d', strtotime("today"));
+                            if($tgl_lahir_b > $today_b){
+                                $umur = ($today_y-1)-$tgl_lahir_y;
+                            }else{
+                                if($tgl_lahir_h > $today_h){
+                                    $umur = ($today_y-1)-$tgl_lahir_y;
+                                }else{
+                                    $umur = $today_y-$tgl_lahir_y;
+                                }
+                            }
+                            
                     ?>
-                    <h5 class="mb-0 ms-4">NAMA : <?php echo $p['nama']; ?></h5>
-                    <?php
-                        }
-                        ?>
+                    <h5 class="mb-0 ms-4">NAMA : <?php echo $p['nama']; ?></h5> 
                     <div class="card-content">
                         <div class="card-body">
-                            <form class="form">
+                            <form class="form" method="POST" action="proses_surat.php">
+                                    <input type ="hidden" name="nik" value="<?php echo $p['nik'];?>">
+                                    <input type ="hidden" name="nama" value="<?php echo $p['nama'];?>">
+                                    <input type ="hidden" name="umur" value="<?php echo $umur ?>">
+                                    <input type ="hidden" name="jenis kelamin" value="<?php echo $p['jenis_kelamin'];?>">
+                                    <input type ="hidden" name="pekerjaan" value="<?php echo $p['pekerjaan'];?>">
+                                    <input type ="hidden" name="alamat" value="<?php echo $p['alamat'];?>">
+                                    <input type ="hidden" name="gol_darah" value="<?php echo $p['gol_darah'];?>">
+                                    <input type ="hidden" name="berlaku" value="<?php echo $berlaku ?>">
+                                    <input type ="hidden" name="tgl_buat" value="<?php echo $today ?>">
+                                    <input type ="hidden" name="waktu" value="<?php echo $time ?>">
+                            <?php
+                                }
+                                ?>
                                 <div class="row">
                                     <div class="col-md-6 col-12">
                                         <div class="form-group">
@@ -139,7 +161,7 @@
                                         <div class="form-group">
                                             <label for="last-name-column">Buta Warna</label>
                                             <input type="text" id="last-name-column" class="form-control"
-                                                placeholder="Buta Warna" name="buta warna">
+                                                placeholder="Buta Warna" name="buta_warna">
                                         </div>
                                     </div>
                                     <div class="col-md-6 col-12">
