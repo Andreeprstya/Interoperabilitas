@@ -12,6 +12,9 @@ if ($cek > 0) {
 	$_SESSION['nik'] = $nik;
 	header("location:data_diri_pasien.php");
 }else {
+	// $data = [
+	// 	"login" => "Login gagal"
+	// ]
 	header("location:form_login.php?pesan=gagal");
 }
 ?>
