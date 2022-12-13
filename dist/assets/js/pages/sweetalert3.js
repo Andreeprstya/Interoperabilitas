@@ -1,6 +1,11 @@
 
 document.getElementById('basic').addEventListener('click', (e) => {
-    Swal.fire('Any fool can use a computer')
+    Swal.fire({
+      icon: 'error',
+      title: 'Oops...',
+      text: 'NIK Anda Belum Terdaftar!',
+      footer: '<a href="#">Ingin Mendaftarkan NIK Anda?</a>'
+    })
 })
 document.getElementById('footer').addEventListener('click', (e) => {
     Swal.fire({

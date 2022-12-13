@@ -30,36 +30,13 @@
     }
     ?>
 
-<section class="section">
-        <div class="row">
-            <div class="col-12">
-                <div class="card">
-                    <div class="card-header">
-                        <h4 class="card-title">Basic Sweet Alert</h4>
-                        <p class="text-muted">SweetAlert automatically centers itself on the page and looks great no
-                            matter if you're using a desktop computer, mobile or tablet. It's even highly customizable,
-                            as you can see below!</p>
-                    </div>
-                    <div class="card-body">
-                        <div class="row">
-                            <div class="col-md-4 col-12">
-                                <button id="basic" class="btn btn-outline-primary btn-lg btn-block">Basic
-                                    Example</button>
-                            </div>
-                            <div class="col-md-4 col-12">
-                                <button id="title" class="btn btn-outline-primary btn-lg btn-block">A title with a text
-                                    under</button>
-                            </div>
-                            <div class="col-md-4 col-12">
-                                <button id="footer" class="btn btn-outline-primary btn-lg btn-block">With
-                                    Footer</button>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
+
+                    
+                  
+                            
+                            
+                        
+
 
 <div class="row h-100">
     <div class="col-lg-5 col-12">
@@ -79,7 +56,10 @@
                     </div>
                 </div>
                
-                
+                <div class="col-md-4 col-12">
+                                <button id="basic" class="btn btn-outline-primary btn-lg btn-block">Basic
+                                    Example</button>
+                            </div>
                 <button class="btn btn-primary btn-block btn-lg shadow-lg ">CEK</button>
             </form>
             
