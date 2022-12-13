@@ -25,7 +25,7 @@
 <body>
 <?php 
     include 'koneksi.php';
-    $data = mysqli_query($koneksi,"SELECT * from tb_sks");
+    $data = mysqli_query($koneksi,"SELECT * from tb_sks ORDER BY id DESC LIMIT 1");
     while($d = mysqli_fetch_array($data)){
 ?>
 	<center>
@@ -96,7 +96,7 @@
 			<tr>
 		       <td>
 			       <font size="2">Demikian surat keterangan ini diperbuat untuk kepentingan :<br>
-				   <i><b>Mencari Pekerjaan<b></i>
+				   <i><b><?php echo $d['tujuan']; ?><b></i>
                     </font>
 		       </td>
 		    </tr>

@@ -29,6 +29,6 @@ mysqli_query($koneksi,"INSERT INTO tb_sks values('','$nik','$nama','$umur','$jen
                                                 '$berlaku','$tgl_buat','$waktu','$dokter','$tujuan')");
 
 //mengalihkan halaman kembali ke index.php
-header("location:cetak_surat_sehat.php");
+header("location:surat.php");
 
 ?>
