@@ -135,7 +135,8 @@
 		<table width="625">
 			<tr>
 				<td width="430"><br><br><br><br></td>
-				<td class="text" align="center">Jimbaran, dd/mm/yyyy<br><br><br><br>Bpk Fauzy.s.kom</td>
+				<td class="text" align="center">Jimbaran, dd/mm/yyyy<br><br><img src="download.png" width="150" height="150"><br><br>Bpk Fauzy.s.kom</td>
+				
 			</tr>
 	     </table>
 	</center>
