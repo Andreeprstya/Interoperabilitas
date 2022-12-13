@@ -23,6 +23,11 @@
 	</style>
 </head>
 <body>
+<?php 
+    include 'koneksi.php';
+    $data = mysqli_query($koneksi,"SELECT * from tb_sks");
+    while($d = mysqli_fetch_array($data)){
+?>
 	<center>
 		<table>
 			<tr>
@@ -42,7 +47,7 @@
 				<td colspan="2"><hr></td>
 			</tr>
 			<tr>
-				<td class="text2">Waktu Pemeriksaan : hh:mm:ss</td>
+				<td class="text2">Waktu Pemeriksaan : <?php echo $d['waktu']; ?></td>
 			</tr>
 		</table>
 		</table>
@@ -66,23 +71,23 @@
 		<table>
 			<tr class="text2">
 				<td><b>Nama</b></td>
-				<td>: Bapake</td>
+				<td>: <?php echo $d['nama']; ?></td>
 			</tr>
 			<tr>
 				<td><b>Umur</b></td>
-				<td width="525">: 500SM</td>
+				<td width="525">: <?php echo $d['umur']; ?></td>
 			</tr>
 			<tr>
 				<td><b>Jenis Kelamin</b></td>
-				<td width="525">: Ganda</td>
+				<td width="525">: <?php echo $d['jenis_kelamin']; ?></td>
 			</tr>
 			<tr>
 				<td><b>Pekerjaan</b></td>
-				<td width="525">: Pengangguran</td>
+				<td width="525">: <?php echo $d['pekerjaan']; ?></td>
 			</tr>
 			<tr>
 				<td><b>Alamat</b></td>
-				<td width="525">: Jln. jalan-jalan br. jalan-jalan</td>
+				<td width="525">: <?php echo $d['alamat']; ?></td>
 			</tr>
 		</table>
 		<br>
@@ -100,45 +105,49 @@
 		<table>
 			<tr class="text2">
 				<td><b>Berat Badan</b></td>
-				<td width="525">: Berat Sekali</td>
+				<td width="525">: <?php echo $d['bb']; ?></td>
 			</tr>
 			<tr>
 				<td><b>Tinggi Badan</b></td>
-				<td width="525">: Tinggi Sekali</td>
+				<td width="525">: <?php echo $d['tb']; ?></td>
 			</tr>
 			<tr>
 				<td><b>Golongan Darah</b></td>
-				<td width="525">: Z</td>
+				<td width="525">: <?php echo $d['gol_darah']; ?></td>
 			</tr>
 			<tr>
 				<td><b>Tekanan Darah</b></td>
-				<td width="525">: Emosi</td>
+				<td width="525">: <?php echo $d['tensi']; ?></td>
 			</tr>
 			<tr>
 				<td><b>Buta Warna</b></td>
-				<td width="525">: Buta Ngawur</td>
+				<td width="525">: <?php echo $d['buta_warna']; ?></td>
 			</tr>
 			<tr>
 				<td><b>Suhu Badan</b></td>
-				<td width="525">: Membara</td>
+				<td width="525">: <?php echo $d['suhu']; ?></td>
 			</tr>
 			<tr>
 				<td><b>Keterangan</b></td>
-				<td width="525">: Terang seterang-terangnya</td>
+				<td width="525">: <?php echo $d['keterangan']; ?></td>
 			</tr>
 			<tr>
 				<td><b>Berlaku Sampai</b></td>
-				<td width="525">: dd/mm/yyyy</td>
+				<td width="525">: <?php echo $d['berlaku']; ?></td>
 			</tr>
 		</table>
 		<br>
 		<table width="625">
 			<tr>
 				<td width="430"><br><br><br><br></td>
-				<td class="text" align="center">Jimbaran, dd/mm/yyyy<br><br><img src="download.png" width="150" height="150"><br><br>Bpk Fauzy.s.kom</td>
+				<td class="text" align="center">Jimbaran, <?php echo $d['tgl_buat']; ?><br><br><img src="download.png" width="150" height="150"><br><br><?php echo $d['dokter']; ?></td>
 				
 			</tr>
 	     </table>
 	</center>
+
+<?php
+	}
+?>
 </body>
 </html>

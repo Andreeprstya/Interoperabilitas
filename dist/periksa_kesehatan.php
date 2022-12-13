@@ -16,6 +16,25 @@
 </head>
 
 <body>
+    <?php 
+    session_start();
+                    
+    // cek apakah yang mengakses halaman ini sudah login
+    if($_SESSION['username']==""){
+        header("location:index.php?pesan=gagal");
+        }
+?>
+<?php
+    include 'koneksi.php';
+    $username = $_SESSION['username'];
+    $query = "SELECT * FROM tb_dokter where username = '$username'";
+    $data = mysqli_query($koneksi, $query);
+    while ($q = mysqli_fetch_array($data)) { 
+        $nama_dok = $q['nama_dokter'];
+?>
+<?php
+    }
+?>
     <div id="app">
         <div id="sidebar" class="active">
             <div class="sidebar-wrapper active">
@@ -101,6 +120,7 @@
                         $data = mysqli_query($koneksi,"SELECT * from tb_antrian where id='$id'");
                         while($d = mysqli_fetch_array($data)){
                         $nik=$d['nik'];
+                        $tujuan=$d['tujuan'];
                     ?>
                     <h5 class="mb-0 ms-4">NIK : <?php echo $d['nik']; ?></h5>
                     <?php
@@ -146,6 +166,8 @@
                                     <input type ="hidden" name="berlaku" value="<?php echo $berlaku ?>">
                                     <input type ="hidden" name="tgl_buat" value="<?php echo $today ?>">
                                     <input type ="hidden" name="waktu" value="<?php echo $time ?>">
+                                    <input type ="hidden" name="dokter" value="<?php echo $nama_dok ?>">
+                                    <input type ="hidden" name="tujuan" value="<?php echo $tujuan ?>">
                             <?php
                                 }
                                 ?>
