@@ -103,7 +103,7 @@
     <script src="assets/js/bootstrap.js"></script>
     <script src="assets/js/app.js"></script>
     <script src="assets/extensions/sweetalert2/sweetalert2.min.js"></script>>
-<script src="assets/js/pages/sweetalert2.js"></script>>
+    <script src="assets/js/pages/sweetalert3.js"></script>>
 </body>
 
 </html>
