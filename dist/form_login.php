@@ -9,6 +9,7 @@
     <link rel="stylesheet" href="assets/css/pages/auth.css">
     <link rel="shortcut icon" href="assets/images/logo/favicon.svg" type="image/x-icon">
     <link rel="shortcut icon" href="assets/images/logo/favicon.png" type="image/png">
+    <link rel="stylesheet" href="assets/extensions/sweetalert2/sweetalert2.min.css">
 </head>
 
 <body>
@@ -29,6 +30,36 @@
     }
     ?>
 
+<section class="section">
+        <div class="row">
+            <div class="col-12">
+                <div class="card">
+                    <div class="card-header">
+                        <h4 class="card-title">Basic Sweet Alert</h4>
+                        <p class="text-muted">SweetAlert automatically centers itself on the page and looks great no
+                            matter if you're using a desktop computer, mobile or tablet. It's even highly customizable,
+                            as you can see below!</p>
+                    </div>
+                    <div class="card-body">
+                        <div class="row">
+                            <div class="col-md-4 col-12">
+                                <button id="basic" class="btn btn-outline-primary btn-lg btn-block">Basic
+                                    Example</button>
+                            </div>
+                            <div class="col-md-4 col-12">
+                                <button id="title" class="btn btn-outline-primary btn-lg btn-block">A title with a text
+                                    under</button>
+                            </div>
+                            <div class="col-md-4 col-12">
+                                <button id="footer" class="btn btn-outline-primary btn-lg btn-block">With
+                                    Footer</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
 
 <div class="row h-100">
     <div class="col-lg-5 col-12">
@@ -69,6 +100,10 @@
 </div>
 
     </div>
+    <script src="assets/js/bootstrap.js"></script>
+    <script src="assets/js/app.js"></script>
+    <script src="assets/extensions/sweetalert2/sweetalert2.min.js"></script>>
+<script src="assets/js/pages/sweetalert2.js"></script>>
 </body>
 
 </html>
