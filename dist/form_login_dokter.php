@@ -9,6 +9,7 @@
     <link rel="stylesheet" href="assets/css/pages/auth.css">
     <link rel="shortcut icon" href="assets/images/logo/favicon.svg" type="image/x-icon">
     <link rel="shortcut icon" href="assets/images/logo/favicon.png" type="image/png">
+    <link rel="stylesheet" href="assets/extensions/sweetalert2/sweetalert2.min.css">
 </head>
 
 <body>
@@ -17,8 +18,8 @@
 
     <?php
     if (isset($_GET['pesan'])) {
-        if ($_GET['pesan'] == "gagal") {
-            echo "Username atau Password salah";
+        if ($_GET['pesan'] == "gagal") {?>
+            <?php    
         } elseif ($_GET['pesan'] == "login") {
             echo "Anda telah berhasil login";
             header("location:daftar_antrean.php");
@@ -75,6 +76,27 @@
 </div>
 
     </div>
+    <script src="assets/extensions/jquery/jquery.min.js"></script>
+    <script src="assets/js/bootstrap.js"></script>
+    <script src="assets/js/app.js"></script>
+    <script src="assets/extensions/sweetalert2/sweetalert2.min.js"></script>>
+    <script src="assets/js/pages/sweetalert3.js"></script>>
+    <script>
+        var pesan = "<?=$_GET['pesan']?>";
+
+        if(pesan == "gagal") {
+            // console.log(pesan);
+           var gagal =  Swal.fire({
+            icon: 'error',
+            title: 'Oops...',
+            text: 'Username atau password salah!',
+            
+            })
+        
+            $('#gagal').html(gagal)
+        }
+       
+    </script>
 </body>
 
 </html>
