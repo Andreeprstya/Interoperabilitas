@@ -124,8 +124,8 @@
                                         <td><?php echo $d['tujuan']; ?></td>
                                         <td><?php echo $d['tanggal']; ?></td>
                                         <td><?php echo $d['waktu']; ?></td>
-                                        <td class="badge bg-success">
-                                            <a href="periksa_kesehatan.php?id=<?php echo $d['id']; ?>">Periksa</a>
+                                        <td >
+                                            <a class="btn btn-primary mt-2 mb-2 "href="periksa_kesehatan.php?id=<?php echo $d['id']; ?>">Periksa</a>
                                         </td>
                                     </tr>
                                     <?php

@@ -216,7 +216,8 @@
                                     </div> 
                                     <div class="col-12 d-flex justify-content-end">
                                         <button type="submit" class="btn btn-primary me-1 mb-1">Cetak</button>
-                                        <button type="reset" class="btn btn-light-secondary me-1 mb-1">Reset</button>
+                                        <button type="reset" class="btn btn-danger me-1 mb-1">Reset</button>
+                                        <a href="daftar_antrean.php" class="btn btn-info me-1 mb-1">Kembali</a>
                                     </div>
                                 </div>
                             </form>
