@@ -242,7 +242,7 @@
                 
                 </table>
                 <center>
-                <td><button class="btn btn-primary" type="submit"><i data-feather="edit"></i>SIMPAN</td>
+                <td><button class="btn btn-primary mt-4 mb-2"  type="submit"><i data-feather="edit"></i>SIMPAN</td>
                 </center>
             </div>
                 

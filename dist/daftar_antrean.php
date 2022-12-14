@@ -104,6 +104,7 @@
                                         <tr>
                                             <th>NO. ANTRIAN</th>
                                             <th>NIK</th>
+                                            <th>EMAIL</th>
                                             <th>TUJUAN</th>
                                             <th>TANGGAL</th>
                                             <th>WAKTU</th>
@@ -121,6 +122,7 @@
                                     <tr>
                                         <td><?php echo $d['no_antrean']; ?></td>
                                         <td><?php echo $d['nik']; ?></td>
+                                        <td><?php echo $d['email']; ?></td>
                                         <td><?php echo $d['tujuan']; ?></td>
                                         <td><?php echo $d['tanggal']; ?></td>
                                         <td><?php echo $d['waktu']; ?></td>
