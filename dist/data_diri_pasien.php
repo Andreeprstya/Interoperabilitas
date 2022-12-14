@@ -237,18 +237,15 @@
                 </tr>
                 <input type="hidden" value="<?php echo $d['berlaku']; ?>" name="berlaku">
                 <input type="hidden" value="<?php echo $d['tgl_buat']; ?>" name="tgl_buat">
-                <tr>
-                    <td width = "15%"></td>
-                    <td width = "2%"></td>
-                    <td width = "30%"></td>
-                    <td width = "20%"><button class="btn icon icon-left btn-primary" type="submit"><i data-feather="edit"></i>SIMPAN</td>
-                    <td width = "15%"></td>
-                    <td width = "2%"></td>
-                    <td width = "30%"></td>
-                </tr>
+                
                 </form>
+                
                 </table>
-                </div>
+                <center>
+                <td><button class="btn btn-primary" type="submit"><i data-feather="edit"></i>SIMPAN</td>
+                </center>
+            </div>
+                
             </div>
         </div>
     </section>

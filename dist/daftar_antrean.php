@@ -125,7 +125,8 @@
                                         <td><?php echo $d['tanggal']; ?></td>
                                         <td><?php echo $d['waktu']; ?></td>
                                         <td >
-                                            <a class="btn btn-primary mt-2 mb-2 "href="periksa_kesehatan.php?id=<?php echo $d['id']; ?>">Periksa</a>
+                                            <a class="btn btn-primary  "href="periksa_kesehatan.php?id=<?php echo $d['id']; ?>">Periksa</a>
+                                            <a href="#" class="btn btn-danger ">Hapus</a>
                                         </td>
                                     </tr>
                                     <?php
