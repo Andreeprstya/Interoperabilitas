@@ -1,59 +1,31 @@
-<!DOCTYPE html>
-<html>
-<head>
-    <title>Nomor Antrian Surat Sehat</title>
-    <style type="text/css">
-        body{
-            font-family: sans-serif;
-        }
-        table{
-            margin: 20px auto;
-            border-collapse: collapse;
-        }
-        table th,
-        table td{
-            border: 1px solid #3c3c3c;
-            padding: 3px 8px;
-
-        }
-        a{
-            background: blue;
-            color: #fff;
-            padding: 8px 10px;
-            text-decoration: none;
-            border-radius: 2px;
-        }
-            .tengah{
-                text-align: center;
-            }
-</style>
-</head>
-<body>
 <?php 
     session_start();       
     // cek apakah yang mengakses halaman ini sudah login
     if($_SESSION['nik']==""){
         header("location:index.php?pesan=gagal");
         }                  
-?>
- <?php
+// memanggil library FPDF
+require('fpdf.php');
+// intance object dan memberikan pengaturan halaman PDF
+$pdf = new FPDF('l','mm','A5');
+// membuat halaman baru
+$pdf->AddPage();
+// setting jenis font yang akan digunakan
+$pdf->SetFont('Arial','B',16);
+$pdf->Cell(190,7,'ANTRIAN SURAT SEHAT',0,1,'C');
+$pdf->Cell(10,7,'',0,1);
  // koneksi database
     include 'koneksi.php';
  // menampilkan data pegawai
     $data = mysqli_query($koneksi,"SELECT * from tb_antrian ORDER BY id DESC LIMIT 1");
     while($d = mysqli_fetch_array($data)){
- ?>
- <center>
-    <font size="5"><b>Antrian Surat Sehat</b></font><br>
-    <font size="15"><b><?php echo $d['no_antrean']; ?></b></font><br>
-    <font size="2"><?php echo $d['tanggal']; ?></font><br>
-    <font size="2"><?php echo $d['waktu']; ?></font><br>
- </center>
- <?php 
+        $pdf->SetFont('Arial','B',40);
+        $pdf->Cell(190,7,$d['no_antrean'],0,1,'C');
+        $pdf->Cell(10,7,'',0,1);
+        $pdf->SetFont('Arial','',14);
+        $pdf->Cell(190,7,$d['tanggal'],0,1,'C');
+        $pdf->SetFont('Arial','',14);
+        $pdf->Cell(190,7,$d['waktu'],0,1,'C');
  }
- ?>
-<script>
- window.print();
-</script>
-</body>
-</html>
+ $pdf->Output();
+?>
