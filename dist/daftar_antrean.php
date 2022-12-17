@@ -127,8 +127,8 @@
                                         <td><?php echo $d['tanggal']; ?></td>
                                         <td><?php echo $d['waktu']; ?></td>
                                         <td >
-                                            <a class="btn btn-primary  "href="periksa_kesehatan.php?id=<?php echo $d['id']; ?>">Periksa</a>
-                                            <a href="#" class="btn btn-danger ">Hapus</a>
+                                            <a class="btn btn-primary" href="periksa_kesehatan.php?id=<?php echo $d['id']; ?>">Periksa</a>
+                                            <a class="btn btn-primary" href="kirim.php?id=<?php echo $d['id']; ?>">Kirim</a>
                                         </td>
                                     </tr>
                                     <?php

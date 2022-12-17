@@ -10,12 +10,26 @@
     <link rel="stylesheet" href="assets/css/main/app-dark.css">
     <link rel="shortcut icon" href="assets/images/logo/favicon.svg" type="image/x-icon">
     <link rel="shortcut icon" href="assets/images/logo/favicon.png" type="image/png">
+    <link rel="stylesheet" href="assets/extensions/sweetalert2/sweetalert2.min.css">
     
 <link rel="stylesheet" href="assets/css/shared/iconly.css">
 
 </head>
 
 <body>
+<?php
+    if (isset($_GET['pesan'])) {
+        if ($_GET['pesan'] == "gagal") {?>
+        <?php    
+        } elseif ($_GET['pesan'] == "login") {
+            echo "Anda telah berhasil login";
+            header("location:data_diri_pasien.php");
+            exit();
+        } elseif ($_GET['pesan'] == "belum login") {
+            echo "Anda harus login untuk mengakses halaman admin";
+        }
+    }
+    ?>
 <?php 
 	session_start();
  
@@ -107,6 +121,15 @@
                 <br>
                 Silakan unduh surat sakit anda disini. 
             </div>
+            <form method="post" action="cek_surat.php">
+                        <?php
+                            include 'koneksi.php';
+                            $nik = $_SESSION['nik'];
+                            $query = "SELECT * FROM tb_ktp where nik = $nik";
+                            $data = mysqli_query($koneksi, $query);
+                            while ($d = mysqli_fetch_array($data)) {
+                        ?>
+                <input type="hidden" value="<?php echo $d['nik']; ?>" name="nik">
             <div class="card-body">
                     <a href="cek_surat.php">
                         <button class="btn icon icon-left btn-success" data-bs-toggle="modal" data-bs-target="#info">
@@ -116,9 +139,13 @@
                         </button>
                     </a>
             </div>
+            </form>
         </div>
     </section>
 </div>
+<?php
+    }
+?>
             
         </div>
     </div>
@@ -126,8 +153,27 @@
     <script src="assets/js/app.js"></script>
     
 <!-- Need: Apexcharts -->
+<script src="assets/extensions/jquery/jquery.min.js"></script>
 <script src="assets/extensions/apexcharts/apexcharts.min.js"></script>
 <script src="assets/js/pages/dashboard.js"></script>
+<script src="assets/extensions/sweetalert2/sweetalert2.min.js"></script>>
+<script src="assets/js/pages/sweetalert3.js"></script>>
+<script>
+        var pesan = "<?=$_GET['pesan']?>";
+
+        if(pesan == "gagal") {
+            // console.log(pesan);
+           var gagal =  Swal.fire({
+            icon: 'error',
+            title: 'Oops... Surat Tidak Ditemukan',
+            text: 'Anda Belum Melakukan Pemeriksaan!',
+            footer: '<a href="cetak_antrean.php">Ingin Melakukan Pemeriksaan?</a>'
+            })
+        
+            $('#gagal').html(gagal)
+        }
+       
+    </script>
 </body>
 
 </html>

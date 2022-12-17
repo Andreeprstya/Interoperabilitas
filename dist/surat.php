@@ -24,8 +24,18 @@
 </head>
 <body>
 <?php 
-    include 'koneksi.php';
-    $data = mysqli_query($koneksi,"SELECT * from tb_sks ORDER BY id DESC LIMIT 1");
+	session_start();
+ 
+	// cek apakah yang mengakses halaman ini sudah login
+	if($_SESSION['nik']==""){
+		header("location:index.php?pesan=gagal");
+	}
+ 
+	?>
+<?php 
+	include 'koneksi.php';
+	$nik = $_SESSION['nik'];
+    $data = mysqli_query($koneksi,"SELECT * from tb_sks WHERE nik = $nik ORDER BY id DESC LIMIT 1");
     while($d = mysqli_fetch_array($data)){
 ?>
 	<center>
