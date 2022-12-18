@@ -122,7 +122,7 @@
                         $nik=$d['nik'];
                         $tujuan=$d['tujuan'];
                     ?>
-                    <h5 class="mb-0 ms-4">NIK : <?php echo $d['nik']; ?></h5>
+                    <font size="4"><i class="mb-0 ms-4">NIK : <?php echo $d['nik']; ?></i></font>
                     <?php
                         }
                     ?>
@@ -152,7 +152,8 @@
                             }
                             
                     ?>
-                    <h5 class="mb-0 ms-4">NAMA : <?php echo $p['nama']; ?></h5> 
+                    
+                    <font size="4"><i class="mt-2 ms-4">Nama : <?php echo $p['nama']; ?></i> </font>
                     <div class="card-content">
                         <div class="card-body">
                             <form class="form" method="POST" action="proses_surat.php">
@@ -182,8 +183,12 @@
                                     <div class="col-md-6 col-12">
                                         <div class="form-group">
                                             <label for="last-name-column">Buta Warna</label>
-                                            <input type="text" id="last-name-column" class="form-control"
-                                                placeholder="Buta Warna" name="buta_warna">
+                                            
+                                                <select class="form-select" id="basicSelect">
+                                                    <option>Buta Warna</option>
+                                                    <option>Positif</option>
+                                                    <option>Negatif</option>
+                                                </select>
                                         </div>
                                     </div>
                                     <div class="col-md-6 col-12">
