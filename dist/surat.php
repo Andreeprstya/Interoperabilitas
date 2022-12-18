@@ -15,16 +15,16 @@ if($_SESSION['nik']==""){
         }
 
         function judul($teks1, $teks3, $teks4, $teks5){
-            $this->Cell(15);
+            $this->Cell(10);
             $this->SetFont('Times','B','15');
             $this->Cell(0,5,$teks1,0,1,'C');
-            $this->Cell(15);
+            $this->Cell(10);
             $this->SetFont('Times','B','20');
             $this->Cell(0,9,$teks3,0,1,'C');
-            $this->Cell(15);
+            $this->Cell(10);
             $this->SetFont('Times','I','8');
             $this->Cell(0,5,$teks4,0,1,'C');
-            $this->Cell(15);
+            $this->Cell(10);
             $this->SetFont('Times','I','14');
             $this->Cell(0,5,$teks5,0,1,'C');
         }
