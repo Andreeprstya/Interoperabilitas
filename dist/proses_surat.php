@@ -3,6 +3,7 @@
 include 'koneksi.php';
 
 //menangkap data yang dikirim dari form
+$id = $_POST['id'];
 $nik = $_POST['nik'];
 $nama = $_POST['nama'];
 $umur = $_POST['umur'];
@@ -22,13 +23,12 @@ $waktu   = $_POST['waktu'];
 $dokter   = $_POST['dokter'];
 $tujuan   = $_POST['tujuan'];
 
-//update data ke database
 mysqli_query($koneksi,"INSERT INTO tb_sks values('','$nik','$nama','$umur','$jenis_kelamin',
                                                 '$pekerjaan','$alamat','$bb','$tb','$gol_darah',
                                                 '$tensi','$buta_warna','$suhu','$keterangan',
                                                 '$berlaku','$tgl_buat','$waktu','$dokter','$tujuan')");
 
 //mengalihkan halaman kembali ke index.php
-header("location:surat.php");
+header("location:update_status.php?id=$id");
 
 ?>

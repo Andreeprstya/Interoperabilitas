@@ -6,6 +6,7 @@
     $tanggal = $_POST['tanggal'];
     $jam = $_POST['jam'];
     $email = $_POST['email'];
+    $status = "0";
     
     $data = mysqli_query($koneksi,"SELECT * from tb_antrian ORDER BY id DESC LIMIT 1");
     while($d = mysqli_fetch_array($data)){
@@ -18,7 +19,7 @@
             $no=1;
         }
     }
-    mysqli_query($koneksi, "INSERT INTO tb_antrian values('','$no','$nik','$tujuan','$tanggal','$jam','$email')");
+    mysqli_query($koneksi, "INSERT INTO tb_antrian values('','$no','$nik','$tujuan','$tanggal','$jam','$email','$status')");
 
     header("location: no_antrean.php");
 ?>

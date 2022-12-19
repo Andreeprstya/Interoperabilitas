@@ -4,9 +4,6 @@ require('fpdf.php');
 session_start();
  
 // cek apakah yang mengakses halaman ini sudah login
-if($_SESSION['nik']==""){
-    header("location:index.php?pesan=gagal");
-}
     class pdf extends FPDF{
         function letak($gambar){
             //memasukkan gambar untuk header
@@ -39,8 +36,8 @@ if($_SESSION['nik']==""){
         function waktu()
         {
             include 'koneksi.php';
-            $nik = $_SESSION['nik'];
-            $data = mysqli_query($koneksi,"SELECT * from tb_sks WHERE nik = $nik ORDER BY id DESC LIMIT 1");
+            $id = $_GET['id'];
+            $data = mysqli_query($koneksi,"SELECT * from tb_sks WHERE id = $id");
             while($d = mysqli_fetch_array($data)){
             $this->Cell(125);
             $this->SetFont('Times','','10');
@@ -66,8 +63,8 @@ if($_SESSION['nik']==""){
         function nama()
         {
             include 'koneksi.php';
-            $nik = $_SESSION['nik'];
-            $data = mysqli_query($koneksi,"SELECT * from tb_sks WHERE nik = $nik ORDER BY id DESC LIMIT 1");
+            $id = $_GET['id'];
+            $data = mysqli_query($koneksi,"SELECT * from tb_sks WHERE id = $id");
             while($d = mysqli_fetch_array($data)){
             $this->Cell(10);
             $this->SetFont('Times','','14');
@@ -77,8 +74,8 @@ if($_SESSION['nik']==""){
         function umur()
         {
             include 'koneksi.php';
-            $nik = $_SESSION['nik'];
-            $data = mysqli_query($koneksi,"SELECT * from tb_sks WHERE nik = $nik ORDER BY id DESC LIMIT 1");
+            $id = $_GET['id'];
+            $data = mysqli_query($koneksi,"SELECT * from tb_sks WHERE id = $id");
             while($d = mysqli_fetch_array($data)){
             $this->Cell(9);
             $this->SetFont('Times','','14');
@@ -88,8 +85,8 @@ if($_SESSION['nik']==""){
         function jk()
         {
             include 'koneksi.php';
-            $nik = $_SESSION['nik'];
-            $data = mysqli_query($koneksi,"SELECT * from tb_sks WHERE nik = $nik ORDER BY id DESC LIMIT 1");
+            $id = $_GET['id'];
+            $data = mysqli_query($koneksi,"SELECT * from tb_sks WHERE id = $id");
             while($d = mysqli_fetch_array($data)){
             $this->Cell(10);
             $this->SetFont('Times','','14');
@@ -99,8 +96,8 @@ if($_SESSION['nik']==""){
         function pekerjaan()
         {
             include 'koneksi.php';
-            $nik = $_SESSION['nik'];
-            $data = mysqli_query($koneksi,"SELECT * from tb_sks WHERE nik = $nik ORDER BY id DESC LIMIT 1");
+            $id = $_GET['id'];
+            $data = mysqli_query($koneksi,"SELECT * from tb_sks WHERE id = $id");
             while($d = mysqli_fetch_array($data)){
             $this->Cell(10);
             $this->SetFont('Times','','14');
@@ -110,8 +107,8 @@ if($_SESSION['nik']==""){
         function alamat()
         {
             include 'koneksi.php';
-            $nik = $_SESSION['nik'];
-            $data = mysqli_query($koneksi,"SELECT * from tb_sks WHERE nik = $nik ORDER BY id DESC LIMIT 1");
+            $id = $_GET['id'];
+            $data = mysqli_query($koneksi,"SELECT * from tb_sks WHERE id = $id");
             while($d = mysqli_fetch_array($data)){
             $this->Cell(10);
             $this->SetFont('Times','','14');
@@ -122,8 +119,8 @@ if($_SESSION['nik']==""){
         function tujuan()
         {
             include 'koneksi.php';
-            $nik = $_SESSION['nik'];
-            $data = mysqli_query($koneksi,"SELECT * from tb_sks WHERE nik = $nik ORDER BY id DESC LIMIT 1");
+            $id = $_GET['id'];
+            $data = mysqli_query($koneksi,"SELECT * from tb_sks WHERE id = $id");
             while($d = mysqli_fetch_array($data)){
             $tujuan = $d['tujuan'];
             $this->Cell(10);
@@ -139,8 +136,8 @@ if($_SESSION['nik']==""){
         function bb()
         {
             include 'koneksi.php';
-            $nik = $_SESSION['nik'];
-            $data = mysqli_query($koneksi,"SELECT * from tb_sks WHERE nik = $nik ORDER BY id DESC LIMIT 1");
+            $id = $_GET['id'];
+            $data = mysqli_query($koneksi,"SELECT * from tb_sks WHERE id = $id");
             while($d = mysqli_fetch_array($data)){
             $this->Cell(10);
             $this->SetFont('Times','','14');
@@ -150,8 +147,8 @@ if($_SESSION['nik']==""){
         function tb()
         {
             include 'koneksi.php';
-            $nik = $_SESSION['nik'];
-            $data = mysqli_query($koneksi,"SELECT * from tb_sks WHERE nik = $nik ORDER BY id DESC LIMIT 1");
+            $id = $_GET['id'];
+            $data = mysqli_query($koneksi,"SELECT * from tb_sks WHERE id = $id");
             while($d = mysqli_fetch_array($data)){
             $this->Cell(10);
             $this->SetFont('Times','','14');
@@ -161,8 +158,8 @@ if($_SESSION['nik']==""){
         function gol_darah()
         {
             include 'koneksi.php';
-            $nik = $_SESSION['nik'];
-            $data = mysqli_query($koneksi,"SELECT * from tb_sks WHERE nik = $nik ORDER BY id DESC LIMIT 1");
+            $id = $_GET['id'];
+            $data = mysqli_query($koneksi,"SELECT * from tb_sks WHERE id = $id");
             while($d = mysqli_fetch_array($data)){
             $this->Cell(10);
             $this->SetFont('Times','','14');
@@ -172,8 +169,8 @@ if($_SESSION['nik']==""){
         function tensi()
         {
             include 'koneksi.php';
-            $nik = $_SESSION['nik'];
-            $data = mysqli_query($koneksi,"SELECT * from tb_sks WHERE nik = $nik ORDER BY id DESC LIMIT 1");
+            $id = $_GET['id'];
+            $data = mysqli_query($koneksi,"SELECT * from tb_sks WHERE id = $id");
             while($d = mysqli_fetch_array($data)){
             $this->Cell(10);
             $this->SetFont('Times','','14');
@@ -183,8 +180,8 @@ if($_SESSION['nik']==""){
         function buta()
         {
             include 'koneksi.php';
-            $nik = $_SESSION['nik'];
-            $data = mysqli_query($koneksi,"SELECT * from tb_sks WHERE nik = $nik ORDER BY id DESC LIMIT 1");
+            $id = $_GET['id'];
+            $data = mysqli_query($koneksi,"SELECT * from tb_sks WHERE id = $id");
             while($d = mysqli_fetch_array($data)){
             $this->Cell(10);
             $this->SetFont('Times','','14');
@@ -194,8 +191,8 @@ if($_SESSION['nik']==""){
         function suhu()
         {
             include 'koneksi.php';
-            $nik = $_SESSION['nik'];
-            $data = mysqli_query($koneksi,"SELECT * from tb_sks WHERE nik = $nik ORDER BY id DESC LIMIT 1");
+            $id = $_GET['id'];
+            $data = mysqli_query($koneksi,"SELECT * from tb_sks WHERE id = $id");
             while($d = mysqli_fetch_array($data)){
             $this->Cell(9);
             $this->SetFont('Times','','14');
@@ -205,8 +202,8 @@ if($_SESSION['nik']==""){
         function ket()
         {
             include 'koneksi.php';
-            $nik = $_SESSION['nik'];
-            $data = mysqli_query($koneksi,"SELECT * from tb_sks WHERE nik = $nik ORDER BY id DESC LIMIT 1");
+            $id = $_GET['id'];
+            $data = mysqli_query($koneksi,"SELECT * from tb_sks WHERE id = $id");
             while($d = mysqli_fetch_array($data)){
             $this->Cell(10);
             $this->SetFont('Times','','14');
@@ -216,8 +213,8 @@ if($_SESSION['nik']==""){
         function berlaku()
         {
             include 'koneksi.php';
-            $nik = $_SESSION['nik'];
-            $data = mysqli_query($koneksi,"SELECT * from tb_sks WHERE nik = $nik ORDER BY id DESC LIMIT 1");
+            $id = $_GET['id'];
+            $data = mysqli_query($koneksi,"SELECT * from tb_sks WHERE id = $id");
             while($d = mysqli_fetch_array($data)){
             $this->Cell(10);
             $this->SetFont('Times','','14');
@@ -229,8 +226,8 @@ if($_SESSION['nik']==""){
         function tempat()
         {
             include 'koneksi.php';
-            $nik = $_SESSION['nik'];
-            $data = mysqli_query($koneksi,"SELECT * from tb_sks WHERE nik = $nik ORDER BY id DESC LIMIT 1");
+            $id = $_GET['id'];
+            $data = mysqli_query($koneksi,"SELECT * from tb_sks WHERE id = $id");
             while($d = mysqli_fetch_array($data)){
             $this->Cell(90);
             $this->SetFont('Times','','14');
@@ -251,8 +248,8 @@ if($_SESSION['nik']==""){
         function dokter()
         {
             include 'koneksi.php';
-            $nik = $_SESSION['nik'];
-            $data = mysqli_query($koneksi,"SELECT * from tb_sks WHERE nik = $nik ORDER BY id DESC LIMIT 1");
+            $id = $_GET['id'];
+            $data = mysqli_query($koneksi,"SELECT * from tb_sks WHERE id = $id");
             while($d = mysqli_fetch_array($data)){
             $this->Cell(90);
             $this->SetFont('Times','','14');

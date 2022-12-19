@@ -157,6 +157,7 @@
                     <div class="card-content">
                         <div class="card-body">
                             <form class="form" method="POST" action="proses_surat.php">
+                                    <input type ="hidden" name="id" value="<?php echo $id ?>">
                                     <input type ="hidden" name="nik" value="<?php echo $p['nik'];?>">
                                     <input type ="hidden" name="nama" value="<?php echo $p['nama'];?>">
                                     <input type ="hidden" name="umur" value="<?php echo $umur ?>">
@@ -220,7 +221,7 @@
                                         </div>
                                     </div> 
                                     <div class="col-12 d-flex justify-content-end">
-                                        <button type="submit" class="btn btn-primary me-1 mb-1">Cetak</button>
+                                        <button type="submit" class="btn btn-primary me-1 mb-1">Simpan</button>
                                         <button type="reset" class="btn btn-danger me-1 mb-1">Reset</button>
                                         <a href="daftar_antrean.php" class="btn btn-info me-1 mb-1">Kembali</a>
                                     </div>

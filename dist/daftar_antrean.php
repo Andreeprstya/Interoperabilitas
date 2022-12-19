@@ -127,8 +127,17 @@
                                         <td><?php echo $d['tanggal']; ?></td>
                                         <td><?php echo $d['waktu']; ?></td>
                                         <td >
-                                            <a class="btn btn-primary" href="periksa_kesehatan.php?id=<?php echo $d['id']; ?>">Periksa</a>
-                                            <a class="btn btn-primary" href="kirim.php?id=<?php echo $d['id']; ?>">Kirim</a>
+                                            <?php
+                                            if ($d['status']=="0") {
+                                                ?>
+                                                <a class="btn btn-primary" href="periksa_kesehatan.php?id=<?php echo $d['id']; ?>">Periksa</a>
+                                                <?php
+                                            }else {
+                                                ?>
+                                                <a class="btn btn-success" href="kirim.php?id=<?php echo $d['id']; ?>">Kirim</a>
+                                                <?php
+                                            }
+                                            ?>
                                         </td>
                                     </tr>
                                     <?php
