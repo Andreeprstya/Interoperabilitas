@@ -8,6 +8,10 @@
     $email = $_POST['email'];
     $status = "0";
     
+    if($email == ""){
+        header("location:cetak_antrean.php?email=kosong");
+    }else{
+    
     $data = mysqli_query($koneksi,"SELECT * from tb_antrian ORDER BY id DESC LIMIT 1");
     while($d = mysqli_fetch_array($data)){
     
@@ -22,4 +26,5 @@
     mysqli_query($koneksi, "INSERT INTO tb_antrian values('','$no','$nik','$tujuan','$tanggal','$jam','$email','$status')");
 
     header("location: no_antrean.php");
+    }
 ?>

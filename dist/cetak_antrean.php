@@ -116,6 +116,20 @@
                         </select>
                         <br>
                         <h6>Email</h6>
+                        <?php 
+                            if(isset($_GET['email'])){
+                                if($_GET['email'] == "kosong"){
+                                    ?>
+                                    <div class="alert alert-danger alert-dismissible show fade">
+                                    <i class="bi bi-file-excel"></i>
+                                        Email Belum Di Masukkan !
+                                        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                                    </div>
+                                    <?php
+                                    
+                                }
+                            }
+                        ?>
                         <input class="form-control" type="email" name="email" placeholder="Masukan Email Anda">
                         <?php
                             include 'koneksi.php';
