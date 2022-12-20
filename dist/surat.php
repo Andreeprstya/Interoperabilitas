@@ -259,6 +259,11 @@ if($_SESSION['nik']==""){
             $this->Cell(0,15,$d['dokter'],0,1,'C');
             }
         }
+        function qr(){
+            //memasukkan gambar untuk header
+            $this->Image("http://localhost/interoperabilitas/dist/qr_generator.php?code=content", 25,219,35,35, "png");
+            //menggeser posisi sekarang
+        }
 }
 
 //instantisasi objek
@@ -291,7 +296,7 @@ $pdf->berlaku();
 $pdf->tempat();
 $pdf->dokter();
 $pdf->cap('cap5.jpeg');
+$pdf->qr();
 
 
-
-$pdf->Output('SURAT SEHAT.pdf','I');
+$pdf->Output('D', 'SURAT SEHAT.pdf');

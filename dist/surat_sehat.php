@@ -133,9 +133,10 @@
             <div class="card-body">
                     <a href="cek_surat.php">
                         <button class="btn icon icon-left btn-success" data-bs-toggle="modal" data-bs-target="#info">
-                            <svg class="bi" width="1em" height="1em" fill="currentColor">
-                                <use xlink:href="assets/images/bootstrap-icons.svg#printer"></use>
-                            </svg>Cetak
+                        <svg class="bi" width="1em" height="1em" fill="currentColor">
+                                        <use xlink:href="assets/images/bootstrap-icons.svg#download"></use>
+                                    </svg>
+                            </svg>DOWNLOAD
                         </button>
                     </a>
             </div>

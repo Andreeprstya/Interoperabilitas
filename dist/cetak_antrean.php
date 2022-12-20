@@ -145,10 +145,10 @@
                     </fieldset>
                     <br>
                     <button class="btn icon icon-left btn-success" data-bs-toggle="modal" data-bs-target="#info">
-                        <svg class="bi" width="1em" height="1em" fill="currentColor">
-                            <use xlink:href="assets/images/bootstrap-icons.svg#printer"></use>
-                            </svg>
-                    Cetak</button>
+                    <svg class="bi" width="1em" height="1em" fill="currentColor">
+                                        <use xlink:href="assets/images/bootstrap-icons.svg#download"></use>
+                                    </svg>
+                    DAPATKAN</button>
                     </form>
                     <br>
                     <br>

@@ -29,5 +29,5 @@ $pdf->Cell(10,7,'',0,1);
         $pdf->SetFont('Arial','B',14);
         $pdf->Cell(0,9,'RUMAH SAKIT-SAKITAN',0,1,'C');
  }
- $pdf->Output('NOMOR ANTREAN.pdf','I');
+ $pdf->Output('NOMOR ANTREAN.pdf','D');
 ?>

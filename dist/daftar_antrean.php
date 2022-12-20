@@ -115,7 +115,7 @@
                                     date_default_timezone_set('Asia/Singapore');
                                     $today=date('Y-m-d');
                                     include 'koneksi.php';
-                                    $query = "SELECT * FROM tb_antrian where tanggal = '$today' ORDER BY id ASC";
+                                    $query = "SELECT * FROM tb_antrian where tanggal = '$today' ORDER BY id DESC";
                                     $data = mysqli_query($koneksi, $query);
                                     while ($d = mysqli_fetch_array($data)) {
                                 ?>
