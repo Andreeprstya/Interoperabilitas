@@ -265,6 +265,8 @@ if($_SESSION['nik']==""){
             //menggeser posisi sekarang
         }
 }
+include 'koneksi.php';
+$nik = $_SESSION['nik'];
 
 //instantisasi objek
 $pdf = new PDF();
@@ -298,5 +300,5 @@ $pdf->dokter();
 $pdf->cap('cap5.jpeg');
 $pdf->qr();
 
-
-$pdf->Output('D', 'SURAT SEHAT.pdf');
+$filename = "SURAT SEHAT $nik.pdf";
+$pdf->Output($filename, 'D');

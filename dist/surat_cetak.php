@@ -295,13 +295,9 @@ $pdf->dokter();
 $pdf->cap('cap5.jpeg');
 $pdf->qr();
 
-
 include 'koneksi.php';
 $id = $_GET['id'];
-$data = mysqli_query($koneksi,"SELECT * from tb_sks WHERE id = $id");
-            while($d = mysqli_fetch_array($data)){
-                $nik = $d['nik'];
-            }
 
-$filename = "SURAT SEHAT $nik.pdf";
-$pdf->Output($filename, 'D');
+$filename = "surat_sehat/Surat Sehat $id.pdf";
+$pdf->Output($filename, 'F');
+header("location:daftar_antrean.php");

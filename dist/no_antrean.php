@@ -28,6 +28,8 @@ $pdf->Cell(10,7,'',0,1);
         $pdf->Cell(0,4,$d['waktu'],0,1,'C');
         $pdf->SetFont('Arial','B',14);
         $pdf->Cell(0,9,'RUMAH SAKIT-SAKITAN',0,1,'C');
+        $no = $d['no_antrean'];
  }
- $pdf->Output('NOMOR ANTREAN.pdf','D');
+ $filename = "NOMOR ANTREAN $no.pdf";
+ $pdf->Output($filename, 'D');
 ?>

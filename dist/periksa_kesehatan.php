@@ -185,7 +185,7 @@
                                         <div class="form-group">
                                             <label for="last-name-column">Buta Warna</label>
                                             
-                                                <select class="form-select" id="basicSelect">
+                                                <select class="form-select" id="basicSelect" name="buta_warna">
                                                     <option>Buta Warna</option>
                                                     <option>Positif</option>
                                                     <option>Negatif</option>
