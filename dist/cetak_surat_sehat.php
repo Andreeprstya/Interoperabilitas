@@ -110,7 +110,10 @@
                                 <td><?php echo $d['tgl_buat']; ?></td>
                                 <td><?php echo $d['waktu']; ?></td>
                                 <td>
-                                    <a class="btn btn-success" href="surat2.php?id=<?php echo $d['id']; ?>">Cetak</a>
+                                    
+                                    <a class="btn btn-success" href="surat2.php?id=<?php echo $d['id']; ?>"><svg class="bi" width="1em" height="1em" fill="currentColor">
+                                        <use xlink:href="assets/images/bootstrap-icons.svg#download"></use>
+                                    </svg> Unduh</a>
                                 </td>
                             </tr>
                             <?php
