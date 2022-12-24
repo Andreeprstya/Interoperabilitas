@@ -24,13 +24,14 @@ $dokter   = $_POST['dokter'];
 $tujuan   = $_POST['tujuan'];
 $status = "1";
 
-mysqli_query($koneksi,"UPDATE tb_antrian set status='$status' WHERE id='$id'");
 mysqli_query($koneksi,"INSERT INTO tb_sks values('','$nik','$nama','$umur','$jenis_kelamin',
                                                 '$pekerjaan','$alamat','$bb','$tb','$gol_darah',
                                                 '$tensi','$buta_warna','$suhu','$keterangan',
                                                 '$berlaku','$tgl_buat','$waktu','$dokter','$tujuan')");
-
 $last_id = mysqli_insert_id($koneksi);
+
+
+mysqli_query($koneksi,"UPDATE tb_antrian set status='$status',id_sks='$last_id' WHERE id='$id'");
 
 //mengalihkan halaman kembali ke index.php
 header("location:surat_cetak.php?id=$last_id");

@@ -1,8 +1,25 @@
 <?php
 //include master file
 require('fpdf.php');
+include "phpqrcode/qrlib.php"; 
 session_start();
- 
+include 'koneksi.php';
+$id = $_GET['id'];
+
+
+// cetak qr
+$tempdir = "qrcode-img/"; //Nama folder tempat menyimpan file qrcode
+	if (!file_exists($tempdir)) //Buat folder bername temp
+    mkdir($tempdir);
+
+$codeContents = "https://localhost/interoperabilitas/dist/surat_cetak.php?id=".$id; 
+$fileName = "Surat_sehat_".$id. '.png'; 
+$pngAbsoluteFilePath = $tempdir.$fileName; 
+$quality = "H";
+$ukuran = 9;
+$padding = 1;
+QRcode::png($codeContents, $pngAbsoluteFilePath,$quality,$ukuran,$padding);
+
 // cek apakah yang mengakses halaman ini sudah login
     class pdf extends FPDF{
         function letak($gambar){
@@ -256,12 +273,8 @@ session_start();
             $this->Cell(0,15,$d['dokter'],0,1,'C');
             }
         }
-        function qr(){
-            //memasukkan gambar untuk header
-            $this->Image("http://localhost/interoperabilitas/dist/qr_generator.php?code=content", 25,219,35,35, "png");
-            //menggeser posisi sekarang
-        }
 }
+        $qrcodeimage = "qrcode-img/Surat_sehat_" . $id . ".png";
 
 //instantisasi objek
 $pdf = new PDF();
@@ -293,10 +306,8 @@ $pdf->berlaku();
 $pdf->tempat();
 $pdf->dokter();
 $pdf->cap('cap5.jpeg');
-$pdf->qr();
+$pdf->Image($qrcodeimage,260,173,35,35);
 
-include 'koneksi.php';
-$id = $_GET['id'];
 
 $filename = "surat_sehat/Surat Sehat $id.pdf";
 $pdf->Output($filename, 'F');

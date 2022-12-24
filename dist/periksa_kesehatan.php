@@ -177,6 +177,19 @@
                                     <div class="col-md-6 col-12">
                                         <div class="form-group">
                                             <label for="first-name-column">Suhu Tubuh</label>
+                                            <?php 
+                                                if(isset($_GET['suhu'])){
+                                                    if($_GET['suhu'] == "kosong"){
+                                                        ?>
+                                                        <div class="alert alert-danger alert-dismissible show fade">
+                                                        <i class="bi bi-file-excel"></i>
+                                                        Suhu Belum Di Masukkan !
+                                                            <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                                                        </div>
+                                                        <?php
+                                                    }
+                                                }
+                                            ?>
                                             <input type="text" id="first-name-column" class="form-control"
                                                 placeholder="Suhu Tubuh" name="suhu">
                                         </div>
@@ -186,9 +199,8 @@
                                             <label for="last-name-column">Buta Warna</label>
                                             
                                                 <select class="form-select" id="basicSelect" name="buta_warna">
-                                                    <option>Buta Warna</option>
-                                                    <option>Positif</option>
                                                     <option>Negatif</option>
+                                                    <option>Positif</option>
                                                 </select>
                                         </div>
                                     </div>

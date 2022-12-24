@@ -134,7 +134,7 @@
                                                 <?php
                                             }else {
                                                 ?>
-                                                <a class="btn btn-success" href="kirim.php?id=<?php echo $d['id']; ?>">Kirim</a>
+                                                <a class="btn btn-success" href="kirim_email.php?id=<?php echo $d['id_sks']; ?>">Kirim</a>
                                                 <?php
                                             }
                                             ?>

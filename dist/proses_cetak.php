@@ -7,6 +7,7 @@
     $jam = $_POST['jam'];
     $email = $_POST['email'];
     $status = "0";
+    $id_sks = "0";
     
     if($email == ""){
         header("location:cetak_antrean.php?email=kosong");
@@ -23,7 +24,7 @@
             $no=1;
         }
     }
-    mysqli_query($koneksi, "INSERT INTO tb_antrian values('','$no','$nik','$tujuan','$tanggal','$jam','$email','$status')");
+    mysqli_query($koneksi, "INSERT INTO tb_antrian values('','$no','$nik','$tujuan','$tanggal','$jam','$email','$status','$id_sks')");
 
     header("location: no_antrean.php");
     }
