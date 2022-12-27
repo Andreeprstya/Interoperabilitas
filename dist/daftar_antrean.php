@@ -118,6 +118,7 @@
                                     $query = "SELECT * FROM tb_antrian where tanggal = '$today' ORDER BY id DESC";
                                     $data = mysqli_query($koneksi, $query);
                                     while ($d = mysqli_fetch_array($data)) {
+                                        
                                 ?>
                                     <tr>
                                         <td><?php echo $d['no_antrean']; ?></td>
@@ -134,7 +135,7 @@
                                                 <?php
                                             }else {
                                                 ?>
-                                                <a class="btn btn-success" href="kirim_email.php?id=<?php echo $d['id_sks']; ?>">Kirim</a>
+                                                <a class="btn btn-success" href="post_email.php?id=<?php echo $d['id']; ?>">Kirim</a>
                                                 <?php
                                             }
                                             ?>

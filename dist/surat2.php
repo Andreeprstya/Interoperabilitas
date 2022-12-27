@@ -1,8 +1,24 @@
 <?php
 //include master file
 require('fpdf.php');
+include "phpqrcode/qrlib.php"; 
 session_start();
- 
+include 'koneksi.php';
+$id = $_GET['id'];
+
+// cetak qr
+$tempdir = "qrcode-img/"; //Nama folder tempat menyimpan file qrcode
+	if (!file_exists($tempdir)) //Buat folder bername temp
+    mkdir($tempdir);
+
+$codeContents = "https://elektro-pnb.id/suratsehat/surat2.php?id=".$nik; 
+$fileName = "Surat_sehat_".$id. '.png'; 
+$pngAbsoluteFilePath = $tempdir.$fileName; 
+$quality = "H";
+$ukuran = 9;
+$padding = 1;
+QRcode::png($codeContents, $pngAbsoluteFilePath,$quality,$ukuran,$padding);
+
 // cek apakah yang mengakses halaman ini sudah login
     class pdf extends FPDF{
         function letak($gambar){
@@ -256,18 +272,14 @@ session_start();
             $this->Cell(0,15,$d['dokter'],0,1,'C');
             }
         }
-        function qr(){
-            //memasukkan gambar untuk header
-            $this->Image("http://localhost/interoperabilitas/dist/qr_generator.php?code=content", 25,219,35,35, "png");
-            //menggeser posisi sekarang
-        }
 }
+$qrcodeimage = "qrcode-img/Surat_sehat_" . $id . ".png";
 
 //instantisasi objek
-$pdf = new PDF();
+$pdf = new PDF('P','mm', 'A4');
 
 //Mulai dokumen
-$pdf->AddPage('P', 'A4');
+$pdf->AddPage();
 //meletakkan gambar
 $pdf->letak('pngegg.png');
 //meletakkan judul disamping logo diatas
@@ -293,7 +305,7 @@ $pdf->berlaku();
 $pdf->tempat();
 $pdf->dokter();
 $pdf->cap('cap5.jpeg');
-$pdf->qr();
+$pdf->Image($qrcodeimage,25,219,35,35);
 
 
 include 'koneksi.php';

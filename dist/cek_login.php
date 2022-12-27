@@ -15,6 +15,6 @@ if ($cek > 0) {
 	// $data = [
 	// 	"login" => "Login gagal"
 	// ]
-	header("location:form_login.php?pesan=gagal");
+	header("location:index.php?pesan=gagal");
 }
 ?>

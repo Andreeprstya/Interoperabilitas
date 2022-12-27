@@ -10,7 +10,7 @@ $cek = mysqli_num_rows($data);
 
 if ($cek > 0) {
 	$_SESSION['nik'] = $nik;
-	header("location:surat.php");
+	header("location:surat.php?nik=$nik");
 }else {
 	// $data = [
 	// 	"login" => "Login gagal"

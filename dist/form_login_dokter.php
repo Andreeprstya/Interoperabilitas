@@ -61,7 +61,7 @@
             
             
             <div class="mt-4 text-lg fs-4">
-                <font size="4"><p class="text-gray-600">Apakah anda pasien? <a href="form_login.php" class="font-bold">Ya</a></p>
+                <font size="4"><p class="text-gray-600">Apakah anda pasien? <a href="index.php" class="font-bold">Ya</a></p>
                 </font>
             </div> 
             
