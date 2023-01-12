@@ -32,7 +32,7 @@
     <div class="sidebar-header position-relative">
         <div class="d-flex justify-content-between align-items-center">
             <div class="logo">
-                <a href="index.html"><img src="assets/images/logo/logo.svg" alt="Logo" srcset=""></a>
+                <img src="pngegg.png" style="width:50px;height:50px;" alt="Logo" srcset="">
             </div>
             <div class="theme-toggle d-flex gap-2  align-items-center mt-2">
                 <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" aria-hidden="true" role="img" class="iconify iconify--system-uicons" width="20" height="20" preserveAspectRatio="xMidYMid meet" viewBox="0 0 21 21"><g fill="none" fill-rule="evenodd" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><path d="M10.5 14.5c2.219 0 4-1.763 4-3.982a4.003 4.003 0 0 0-4-4.018c-2.219 0-4 1.781-4 4c0 2.219 1.781 4 4 4zM4.136 4.136L5.55 5.55m9.9 9.9l1.414 1.414M1.5 10.5h2m14 0h2M4.135 16.863L5.55 15.45m9.899-9.9l1.414-1.415M10.5 19.5v-2m0-14v-2" opacity=".3"></path><g transform="translate(-210 -1)"><path d="M220.5 2.5v2m6.5.5l-1.5 1.5"></path><circle cx="220.5" cy="11.5" r="4"></circle><path d="m214 5l1.5 1.5m5 14v-2m6.5-.5l-1.5-1.5M214 18l1.5-1.5m-4-5h2m14 0h2"></path></g></g></svg>
@@ -109,11 +109,14 @@
                     <h6>Tujuan Mencari Surat Keterangan Sehat</h6>
                     <fieldset class="form-group">
                     <form id="form_combobox" name="form_combobox" method="POST" action="proses_cetak.php">
-                        <select class="form-select" id="basicSelect" name="tujuan">
-                            <option>Mencari Pekerjaan</option>
-                            <option>Mencari Perguruan Tinggi</option>
-                            <option>Mencari SIM</option>
+                        <select class="form-select" name="tujuan" id="myselect">
+                            <option value="Mencari Pekerjaan">Mencari Pekerjaan</option>
+                            <option value="Mencari Perguruan Tinggi">Mencari Perguruan Tinggi</option>
+                            <option value="Mencari SIM">Mencari SIM</option>
+                            <option value="option4">Lain-lainnya</option>
                         </select>
+                        </br>
+                        <input class="form-control" id="myinput" type="text" name="tujuan2" placeholder="Masukan Tujuan lain Anda" style="display:none">
                         <br>
                         <h6>Email</h6>
                         <?php 
@@ -159,6 +162,21 @@
 </div>           
         </div>
     </div>
+<script>
+  // Get references to the select and text input elements
+  var select = document.getElementById("myselect");
+  var textInput = document.getElementById("myinput");
+
+  // Add an event listener for when the select value changes
+  select.addEventListener("change", function() {
+    // If the selected value is "option1", show the text input
+    if (select.value === "option4") {
+      textInput.style.display = "block";
+    } else {
+      textInput.style.display = "none";
+    }
+  });
+</script>
     <script src="assets/js/bootstrap.js"></script>
     <script src="assets/js/app.js"></script>
     

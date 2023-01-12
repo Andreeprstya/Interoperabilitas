@@ -11,7 +11,7 @@ require_once "library/SMTP.php";
 	$id_sks = $_POST['id_sks'];
 	$FileName = "Surat Sehat $id_sks.pdf";
 	//Enable SMTP debugging. 
-	$mail->SMTPDebug = 2;
+	//$mail->SMTPDebug = 1;
 	//Set PHPMailer to use SMTP.
 	$mail->isSMTP();            
 	//Set SMTP host name                          
@@ -19,8 +19,8 @@ require_once "library/SMTP.php";
 	//Set this to true if SMTP host requires authentication to send email
 	$mail->SMTPAuth = true;                          
 	//Provide username and password     
-	$mail->Username = 'andreseptaprasetya06@gmail.com';   //nama-email smtp          
-	$mail->Password = 'erkbpsnliginurnt';           //password email smtp
+	$mail->Username = 'rs3089920@gmail.com';   //nama-email smtp          
+	$mail->Password = 'ltevuqxgavcqovof';           //password email smtp
 	//If SMTP requires TLS encryption then set it
 	$mail->SMTPSecure = 'tls';                           
 	//Set TCP port to connect to 
@@ -28,7 +28,7 @@ require_once "library/SMTP.php";
  
 	$mail->setFrom("amdreseptaprasetya26@gmail.com", "RUMAH SAKIT SAKITAN"); //email pengirim
 
-	$mail->addAddress($_POST['email'], 'RUMAT SAKIT SAKITAN'); //email penerima
+	$mail->addAddress($_POST['email'], $_POST['nama']); //email penerima
  
 	$mail->isHTML(true);
     
@@ -40,13 +40,21 @@ require_once "library/SMTP.php";
 	if($FileName!=""){
 		$mail->AddAttachment("surat_sehat/".$FileName); // attach files
 	}
- 
-	if(!$mail->send()) 
+    
+   $send = $mail->send();
+	if(!$send) 
 	{
-	    echo "Mailer Error: " . $mail->ErrorInfo;
+	    
+	    echo "<SCRIPT language=Javascript>
+        		    alert('Email Gagal Terkirim! silakan ulangi')
+        	   </script>";
+        echo "<script type='text/javascript'> document.location = 'daftar_antrean.php';</script>";
 	} 
 	else 
 	{
-	    echo "Message has been sent successfully";
+	    echo "<SCRIPT language=Javascript>
+        		    alert('Email Berhasil Terkirim! silakan di cek')
+        	   </script>";
+        echo "<script type='text/javascript'> document.location = 'daftar_antrean.php';</script>";
 	}
 ?>

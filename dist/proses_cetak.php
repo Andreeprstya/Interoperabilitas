@@ -2,6 +2,9 @@
     include 'koneksi.php';
 
     $tujuan =$_POST['tujuan'];
+    if($tujuan==="option4"){
+        $tujuan = $_POST['tujuan2'];
+    };
     $nik = $_POST['nik'];
     $tanggal = $_POST['tanggal'];
     $jam = $_POST['jam'];

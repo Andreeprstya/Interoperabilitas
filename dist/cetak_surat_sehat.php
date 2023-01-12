@@ -94,7 +94,7 @@
                             <th>Nama</th>
                             <th>Tanggal Dibuat</th>
                             <th>Waktu</th>
-                            <th>Proses</th>
+                            <th width = 25%>Proses</th>
                         </tr>
                     </thead>
                     <tbody>
@@ -110,10 +110,12 @@
                                 <td><?php echo $d['tgl_buat']; ?></td>
                                 <td><?php echo $d['waktu']; ?></td>
                                 <td>
-                                    
                                     <a class="btn btn-success" href="surat2.php?id=<?php echo $d['id']; ?>"><svg class="bi" width="1em" height="1em" fill="currentColor">
                                         <use xlink:href="assets/images/bootstrap-icons.svg#download"></use>
                                     </svg> Unduh</a>
+                                    <a class="btn btn-success" href="surat3.php?id=<?php echo $d['id']; ?>"><svg class="bi" width="1em" height="1em" fill="currentColor">
+                                        <use xlink:href="assets/images/bootstrap-icons.svg#printer-fill"></use>
+                                    </svg> Cetak</a>
                                 </td>
                             </tr>
                             <?php

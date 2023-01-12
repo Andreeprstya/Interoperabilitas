@@ -16,15 +16,6 @@
 </head>
 
 <body>
-<?php 
-	session_start();
- 
-	// cek apakah yang mengakses halaman ini sudah login
-	if($_SESSION['username']==""){
-		header("location:index.php?pesan=gagal");
-	}
- 
-	?>
     <div id="app">
         <div id="sidebar" class="active">
             <div class="sidebar-wrapper active">
@@ -100,25 +91,20 @@
     <section class="section">
         <div class="card">
             <div class="card-header">
-            <h4 class="card-title">Data Diri</h4>
+            <h4 class="card-title">Edit Diri</h4>
             <?php
                 include 'koneksi.php';
-                $username = $_SESSION['username'];
-                $query = "SELECT * FROM tb_dokter where username = '$username'";
+                $id_dokter = $_GET['id'];
+                $query = "SELECT * FROM tb_dokter where id_dokter = '$id_dokter'";
                 $data = mysqli_query($koneksi, $query);
                 while ($d = mysqli_fetch_array($data)) {
             ?>
-                <label>Username</label>
-                <br>
-                <label><b><?php echo $d['username']; ?></b></label>
-                <br>
-                <br>
-                <label>Nama</label>
-                <br>
-                <label><b><?php echo $d['nama_dokter']; ?></b></label>
-                <center>
-                <a class="btn btn-primary" href="edit_profile.php?id=<?php echo $d['id_dokter']; ?>"><i data-feather="edit"></i>Edit</a>
-                </center>
+                <form class="form" method="POST" action="proses_edit_profile.php">
+                    <label>Username</label>
+                    <input type ="hidden" name="id_dokter" value="<?php echo $d['id_dokter']; ?>">
+                    <input type ="text" name="nama_dokter" value="<?php echo $d['nama_dokter']; ?>">
+                    <button type="submit" class="btn btn-primary me-1 mb-1"><i data-feather="edit"></i>Edit</button>
+                </form>
 </div>
 <?php } ?>
                         </div>
@@ -141,3 +127,6 @@
 </body>
 
 </html>
+<input type ="hidden" name="nama_dokter" value="<?php echo $d['nama_dokter']; ?>">
+    <button  type="submit" class="btn btn-primary me-1 mb-1"><i data-feather="edit"></i>Edit</button>
+</form>
